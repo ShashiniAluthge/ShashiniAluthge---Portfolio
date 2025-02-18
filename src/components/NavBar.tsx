@@ -1,7 +1,7 @@
 const NavBar = () => {
   return (
     <div>
-      <nav className="flex justify-between items-center p-6 shadow-lg">
+      <nav className="flex justify-between items-center p-6 ">
         <h1 className="text-2xl font-bold text-white ml-16">
           Shashini Aluthge
         </h1>
