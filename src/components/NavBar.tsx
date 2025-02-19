@@ -1,9 +1,9 @@
 const NavBar = () => {
   return (
     <div>
-      <nav className="flex justify-between items-center p-6 ">
-        <h1 className="text-2xl font-bold text-white ml-16">
-          Shashini Aluthge
+      <nav className="flex justify-between items-center p-6 ml-30 mr-30">
+        <h1 className="text-2xl font-bold text-white  tracking-wide uppercase ">
+         <span className="text-[#00FF08] italic font-serif text-3xl ">S</span>hashini
         </h1>
         <ul className="flex space-x-6">
           <li className="border-b border-transparent hover:border-white transition  hover:shadow-[1px_4px_4px_#00FF08] px-4 py-1 rounded-4xl cursor-pointer">
