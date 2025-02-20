@@ -1,50 +1,69 @@
+import { useState } from "react";
+
 const NavBar = () => {
+  const [active, setActive] = useState("home");
+
   return (
-    <div>
-      <nav className="flex justify-between items-center p-6 ml-30 mr-30">
-        <h1 className="text-2xl font-bold text-white  tracking-wide uppercase ">
-         <span className="text-[#00FF08] italic font-serif text-3xl ">S</span>hashini
+    <div className="fixed top-0 right-30 left-30 bg-[#292929]">
+      <nav className="flex justify-between items-center p-6">
+        <h1 className="text-2xl font-bold text-white tracking-wide uppercase">
+          <span className="text-[#00FF08] italic font-serif text-3xl">S</span>
+          hashini
         </h1>
         <ul className="flex space-x-6">
-          <li className="border-b border-transparent hover:border-white transition  hover:shadow-[1px_4px_4px_#00FF08] px-4 py-1 rounded-4xl cursor-pointer">
-            <a
-              href="#home"
-              className="text-white hover:text-[#00FF08] hover:font-bold"
-            >
-              Home
-            </a>
+          <li
+            onClick={() => setActive("home")}
+            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
+              active === "home"
+                ? "text-[#00FF08] font-bold"
+                : "text-[#fff] hover:text-[#00FF08] hover:font-bold"
+            }`}
+          >
+            <a href="#home">Home</a>
           </li>
-          <li className="border-b border-transparent hover:border-white transition  hover:shadow-[1px_4px_4px_#00FF08] px-4 py-1 rounded-4xl cursor-pointer">
-            <a
-              href="#home"
-              className="text-white hover:text-[#00FF08] hover:font-bold"
-            >
-              About
-            </a>
+
+          <li
+            onClick={() => setActive("about")}
+            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
+              active === "about"
+                ? "text-[#00FF08] font-bold"
+                : "text-[#fff] hover:text-[#00FF08] hover:font-bold"
+            }`}
+          >
+            <a href="#about">About</a>
           </li>
-          <li className="border-b border-transparent hover:border-white transition  hover:shadow-[1px_4px_4px_#00FF08] px-4 py-1 rounded-4xl cursor-pointer">
-            <a
-              href="#home"
-              className="text-white hover:text-[#00FF08] hover:font-bold"
-            >
-              Skills
-            </a>
+
+          <li
+            onClick={() => setActive("skills")}
+            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
+              active === "skills"
+                ? "text-[#00FF08] font-bold"
+                : "text-[#fff] hover:text-[#00FF08] hover:font-bold"
+            }`}
+          >
+            <a href="#skills">Skills</a>
           </li>
-          <li className="border-b border-transparent hover:border-white transition  hover:shadow-[1px_4px_4px_#00FF08] px-4 py-1 rounded-4xl cursor-pointer">
-            <a
-              href="#home"
-              className="text-white hover:text-[#00FF08] hover:font-bold"
-            >
-              Projects
-            </a>
+
+          <li
+            onClick={() => setActive("projects")}
+            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
+              active === "projects"
+                ? "text-[#00FF08] font-bold"
+                : "text-[#fff] hover:text-[#00FF08] hover:font-bold"
+            }`}
+          >
+            <a href="#projects">Projects</a>
           </li>
-          <li className="border-b border-transparent hover:border-white transition  hover:shadow-[1px_4px_4px_#00FF08] px-4 py-1 rounded-4xl cursor-pointer">
-            <a
-              href="#home"
-              className="text-white hover:text-[#00FF08] hover:font-bold"
-            >
-              Contact
-            </a>
+
+          <li
+            onClick={() => setActive("contact")}
+            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
+              active === "contact"
+                ? "text-[#00FF08] font-bold"
+                : "text-[#fff] hover:text-[#00FF08] hover:font-bold"
+            }`}
+          >
+            <a href="#contact">Contact</a>
           </li>
         </ul>
         <button className="px-5 py-2 text-[#00FF08] rounded-4xl transition-all duration-200 bg-[#292929] shadow-[0_4px_7px_#00FF08] hover:shadow-[0_6px_8px_#00FF08] hover:scale-105 cursor-pointer">
