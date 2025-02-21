@@ -7,7 +7,7 @@ const NavBar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 lg:right-30 lg:left-30 bg-[#292929] sm:left-0 sm:right-0">
+    <div className="fixed top-0 left-0 right-0 lg:right-30 lg:left-30 md:left-10 md:right-10 bg-[#292929]  ">
       <nav className="flex justify-between items-center p-6">
         <h1 className="text-2xl font-bold text-white tracking-wide uppercase">
           <span className="text-[#00FF08] italic font-serif text-3xl">S</span>

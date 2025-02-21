@@ -1,6 +1,6 @@
 const SocialIcons = () => {
   return (
-    <div className="flex flex-row space-x-4 ml-10">
+    <div className="flex flex-row space-x-4 md:ml-10 justify-center mt-5 md:mt-0">
       <div className="flex w-12 h-12 border-1 p-2 rounded-full  justify-center items-center border-[#00ff08] hover:ring-1 hover:ring-[#00ff08]  hover:shadow-[0_4px_4px_#00FF08] ">
         <a
           href="https://github.com/ShashiniAluthge"
