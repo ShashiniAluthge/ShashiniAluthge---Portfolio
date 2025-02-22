@@ -1,11 +1,13 @@
-import Home from "./pages/Home"
+import About from "./sections/About";
+import Home from "./sections/Home";
 
 const App = () => {
   return (
-    <div>
-      <Home/>
+    <div className="bg-[var(--background)]">
+      <Home />
+      <About />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

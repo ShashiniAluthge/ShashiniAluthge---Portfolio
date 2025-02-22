@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import SocialIcons from "../components/SocialIcons";
-import ProfileImage from "../assets/Profile.png";
+import profileBackImage from "../assets/back.png";
 
 const roles = ["Full Stack Developer", "Programmer", "UI/UX Designer"];
 
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         });
       },
       isDeleting ? 50 : 100
-    ); // Typing speed vs deleting speed
+    ); // Typing speed and deleting speed
 
     return () => clearInterval(typingInterval);
   }, [characterIndex, isDeleting, roleIndex]);
@@ -50,22 +50,26 @@ const Home: React.FC = () => {
     <div className="bg-[var(--background)] min-h-screen pt-16 lg:pt-0">
       <NavBar />
 
-      <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:h-[100vh] lg:ml-30 lg:mr-30 pt-12 lg:pt-10 md:ml-10 md:mr-10 ml-2 mr-2">
+      <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:h-[100vh] lg:ml-30 lg:mr-30 pt-12 md:ml-10 md:mr-10 ml-2 mr-2">
         <div className=" flex lg:flex-1">
-          <div className="w-70 h-70 md:w-90 md:h-90 lg:w-120 lg:h-120 border-r-3 border-l-3 border-[var(--primary)] rounded-full overflow-hidden items-center justify-center">
-            <img src={ProfileImage} className="w-full h-full object-contain" />
+          <div className="w-80 h-80 md:w-110 md:h-110 lg:w-150 lg:h-150  overflow-hidden items-center justify-center lg:mt-8">
+            <img
+              src={profileBackImage}
+              className="w-full h-full object-contain  z-10"
+            />
           </div>
         </div>
 
         <div className="flex-1 flex-col justify-center items-center pt-8 md:pt-2 lg:pt-0 text-center lg:text-left">
-          <h1 className="text-[var(--secondary)] font-bold text-4xl md:text-5xl/20">
-            Hi, I'm
+          <h1 className="text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20">
+            Hello It's Me
           </h1>
           <h1 className="text-[var(--secondary)] font-bold text-4xl md:text-5xl/20">
-            Shashini Aluthge,
+            Shashini Aluthge
           </h1>
           <h2 className="text-[var(--secondary)] font-bold text-xl md:text-2xl lg:text-3xl">
-            a <span className="text-[var(--primary)]">{displayText}</span>
+            And I'm a{" "}
+            <span className="text-[var(--primary)]">{displayText}</span>
             <span className="text-[var(--primary)] cursor">|</span>
           </h2>
           <div className="mt-6  lg:mt-10 flex flex-col md:flex-row ">
