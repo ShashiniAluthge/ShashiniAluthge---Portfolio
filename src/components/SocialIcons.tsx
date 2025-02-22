@@ -1,12 +1,12 @@
 const SocialIcons = () => {
   return (
     <div className="flex flex-row space-x-4 md:ml-10 justify-center mt-5 md:mt-0">
-      <div className="flex w-12 h-12 border-1 p-2 rounded-full  justify-center items-center border-[#00ff08] hover:ring-1 hover:ring-[#00ff08]  hover:shadow-[0_4px_4px_#00FF08] ">
+      <div className="flex w-12 h-12 border-1 p-2 rounded-full  justify-center items-center border-[var(--primary)] hover:ring-1 hover:ring-[var(--primary)]  hover:shadow-[0_4px_4px_var(--primary)]">
         <a
           href="https://github.com/ShashiniAluthge"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white hover:text-[#00ff08] transition duration-300"
+          className="text-[var(--secondary)] hover:text-[var(--primary)] transition duration-300"
         >
           <svg
             className="w-8 h-8"
@@ -22,12 +22,12 @@ const SocialIcons = () => {
           </svg>
         </a>
       </div>
-      <div className="flex w-12 h-12 border-1 p-2 rounded-full  justify-center items-center border-[#00ff08] hover:ring-1 hover:ring-[#00ff08]  hover:shadow-[0_4px_4px_#00FF08]">
+      <div className="flex w-12 h-12 border-1 p-2 rounded-full  justify-center items-center border-[var(--primary)] hover:ring-1 hover:ring-[var(--primary)]  hover:shadow-[0_4px_4px_var(--primary)]">
         <a
           href="https://www.linkedin.com/in/shashini-sithara-64545b30b/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white hover:text-[#00ff08] transition duration-300"
+          className="text-[var(--secondary)] hover:text-[var(--primary)] transition duration-300"
         >
           <svg
             className="w-6 h-6"
@@ -44,12 +44,12 @@ const SocialIcons = () => {
         </a>
       </div>
 
-      <div className="flex w-12 h-12 border-1 p-2 rounded-full justify-center items-center border-[#00ff08] hover:ring-1 hover:ring-[#00ff08]  hover:shadow-[0_4px_4px_#00FF08]">
+      <div className="flex w-12 h-12 border-1 p-2 rounded-full justify-center items-center border-[var(--primary)] hover:ring-1 hover:ring-[var(--primary)]  hover:shadow-[0_4px_4px_var(--primary)]">
         <a
           href="https://www.facebook.com/shashini.aluthge.3"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white hover:text-[#00ff08] transition duration-300"
+          className="text-[var(--secondary)] hover:text-[var(--primary)] transition duration-300"
         >
           <svg
             className="w-8 h-8"

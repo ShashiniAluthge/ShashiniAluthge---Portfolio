@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+:root {
+    --primary: #009DFF;
+    --secondary: #fff;
+    --background: #05151F;
+  }
+
+  .button_shadow {
+    box-shadow: 0 4px 7px var(--primary);
+  }
+  
+  .button_shadow-hover:hover {
+    box-shadow: 0 6px 8px var(--primary);
+  }  
