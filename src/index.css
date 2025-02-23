@@ -4,7 +4,9 @@
   --primary: #009dff;
   --secondary: #fff;
   --background: #05151f;
-  --secondbackground: #4a4f62;
+  --secondbackground: #272D41;
+  --gradient_1:#4FADFF;
+  --gradient_2:#87C7FF;
 }
 
 .button_shadow {
@@ -13,4 +15,10 @@
 
 .button_shadow-hover:hover {
   box-shadow: 0 6px 8px var(--primary);
+}
+
+.gradient-border {
+  border: 2px solid transparent; 
+  border-image-source: linear-gradient(to right, var(--primary), var(--gradient_1), var(--gradient_2), var(--secondary));
+  border-image-slice: 1; /*full border coverage */
 }
