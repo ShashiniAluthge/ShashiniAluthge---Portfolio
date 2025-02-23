@@ -4,9 +4,9 @@
   --primary: #009dff;
   --secondary: #fff;
   --background: #05151f;
-  --secondbackground: #272D41;
-  --gradient_1:#4FADFF;
-  --gradient_2:#87C7FF;
+  --secondbackground: #272d41;
+  --gradient_1: #4fadff;
+  --gradient_2: #87c7ff;
 }
 
 .button_shadow {
@@ -18,7 +18,20 @@
 }
 
 .gradient-border {
-  border: 2px solid transparent; 
-  border-image-source: linear-gradient(to right, var(--primary), var(--gradient_1), var(--gradient_2), var(--secondary));
-  border-image-slice: 1; /*full border coverage */
+
+  border: 2px solid transparent;
+  border-radius: 24px; /* Matches rounded-3xl */
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(
+      var(--secondbackground),
+      var(--secondbackground)
+    ),
+    linear-gradient(
+      to right,
+      var(--primary),
+      var(--gradient_1),
+      var(--gradient_2),
+      var(--secondary)
+    );
 }
