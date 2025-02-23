@@ -36,18 +36,7 @@ const NavBar = () => {
                 : "text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold "
             }`}
           >
-            <a href="#about">About</a>
-          </li>
-
-          <li
-            onClick={() => setActive("skills")}
-            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
-              active === "skills"
-                ? "text-[var(--primary)] font-bold"
-                : "text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold "
-            }`}
-          >
-            <a href="#skills">Skills</a>
+            <a href="#about">About Me</a>
           </li>
 
           <li
@@ -59,6 +48,16 @@ const NavBar = () => {
             }`}
           >
             <a href="#projects">Projects</a>
+          </li>
+          <li
+            onClick={() => setActive("techStack")}
+            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
+              active === "techStack"
+                ? "text-[var(--primary)] font-bold"
+                : "text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold "
+            }`}
+          >
+            <a href="#techStack">Teck Stack</a>
           </li>
 
           <li

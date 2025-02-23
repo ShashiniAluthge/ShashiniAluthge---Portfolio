@@ -20,7 +20,10 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={onClose} className="absolute top-4 right-4 text-[var(--secondary)]">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-[var(--secondary)]"
+        >
           <img src={closeIcon} className="w-8 h-8" />
         </button>
 
@@ -32,17 +35,19 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
           </li>
           <li className="block text-lg md:text-xl text-[var(--secondary)] hover:text-[var(--primary)] transition">
             <a href="#about" onClick={onClose}>
-              About
+              About Me
             </a>
           </li>
-          <li className="block text-lg md:text-xl text-[var(--secondary)] hover:text-[var(--primary)] transition">
-            <a href="#skills" onClick={onClose}>
-              Skills
-            </a>
-          </li>
+
           <li className="block text-lg md:text-xl text-[var(--secondary)] hover:text-[var(--primary)] transition">
             <a href="#projects" onClick={onClose}>
               Projects
+            </a>
+          </li>
+
+          <li className="block text-lg md:text-xl text-[var(--secondary)] hover:text-[var(--primary)] transition">
+            <a href="#techStack" onClick={onClose}>
+              Tech Stack
             </a>
           </li>
           <li className="block text-lg md:text-xl text-[var(--secondary)] hover:text-[var(--primary)] transition">

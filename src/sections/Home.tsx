@@ -69,14 +69,16 @@ const Home: React.FC = () => {
           </h1>
           <h2 className="text-[var(--secondary)] font-bold text-xl md:text-2xl lg:text-3xl">
             And I'm a{" "}
-            <span className="text-[var(--primary)]">{displayText}</span>
+            <span className=" bg-gradient-to-r from-[var(--primary)] via-[var(--gradient_1)] via-[var(--gradient_2)] to-[var(--secondary)] bg-clip-text text-transparent">
+              {displayText}
+            </span>
             <span className="text-[var(--primary)] cursor">|</span>
           </h2>
           <div className="mt-6  lg:mt-10 flex flex-col md:flex-row ">
             <div className="text-center">
               <button className="px-8 py-2 lg:px-5 text-[var(--primary)] rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
                 <a
-                  href="https://drive.google.com/file/d/1CiXdDgcX3e9vTXqNv9aa2m5KmLh__ZyS"
+                  href="https://drive.google.com/file/d/1zAqr4EBp2FiZnMIN0puaCAm3ZHJgdxrk/view?usp=sharing"
                   download="Shashini_Aluthge_CV.pdf"
                   target="_blank"
                 >
