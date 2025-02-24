@@ -69,7 +69,7 @@ const Home: React.FC = () => {
           </h1>
           <h2 className="text-[var(--secondary)] font-bold text-xl md:text-2xl lg:text-3xl">
             And I'm a{" "}
-            <span className=" bg-gradient-to-r from-[var(--primary)] via-[var(--gradient_1)] via-[var(--gradient_2)] to-[var(--secondary)] bg-clip-text text-transparent">
+            <span className="text-[var(--primary)]">
               {displayText}
             </span>
             <span className="text-[var(--primary)] cursor">|</span>

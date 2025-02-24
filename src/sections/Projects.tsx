@@ -1,4 +1,6 @@
 import HorizontalLine from "../components/HorizontalLine";
+import MobileAppDevelopment from "../components/MobileAppDevelopment";
+import UIDesigns from "../components/UIDesigns";
 import WebAppDevelopment from "../components/WebAppDevelopment";
 
 const Projects = () => {
@@ -9,8 +11,11 @@ const Projects = () => {
         <span className="text-[var(--primary)]"> Projects</span>
       </h1>
       <HorizontalLine />
-      <WebAppDevelopment/>
-      
+      <MobileAppDevelopment />
+      <HorizontalLine />
+      <WebAppDevelopment />
+      <HorizontalLine />
+      <UIDesigns />
     </section>
   );
 };
