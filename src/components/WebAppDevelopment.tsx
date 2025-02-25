@@ -15,54 +15,9 @@ const WebAppDevelopment = () => {
           />
           Web App Development
         </h1>
-        {/* for Game Hub */}
-        <div className="w-full flex flex-col lg:flex-row container mx-auto px-2 py-5">
-          {/* for image */}
-          <div className="flex flex-1 p-2 items-center justify-center">
-            <img
-              src={GameWebImage}
-              className="w-[80%] h-[80%] md:w-[60%]  lg:rounded-2xl rounded-lg"
-            />
-          </div>
-          <div className="flex-1 p-4 ">
-            {/* for project name */}
-            <p className="text-[var(--primary)] font-semibold  text-2xl">
-              Gaming Website
-            </p>
-            {/* for project description */}
-            <p className="text-[var(--secondary)] lg:text-lg text-md lg:mt-2 mt-3 font-light text-justify">
-              I developed a dynamic Game Hub website using React, Vite, and
-              TypeScript, incorporating tools like React Query, Zustand, and
-              Chakra UI for enhanced functionality and design.
-            </p>
-            {/*for Technologies */}
-            <div className="grid grid-cols-2 md:flex md:flex-row  gap-3 mt-2">
-              <p className="inline-flex justify-center items-center text-[var(--primary)]  text-md font-semibold border-2 rounded-lg p-2 lg:px-4 py-1 w-auto">
-                React.js
-              </p>
-              <p className="inline-flex justify-center items-center text-[var(--primary)]  text-md font-semibold border-2 rounded-lg p-2 lg:px-4 py-1 w-auto">
-                TypeScript
-              </p>
-            </div>
-            {/* divider */}
-            <hr className="border-2 border-[var(--secondbackground)] mt-5 mb-2" />
-
-            {/* for github link */}
-            <div className=" border-2 rounded-full w-10 p-2 border-[var(--secondbackground)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
-              <a
-                href="https://github.com/ShashiniAluthge/game-hub"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex justify-left"
-              >
-                <img src={GitIcon} className="w-full h-full" />
-              </a>
-            </div>
-          </div>
-        </div>
-
+        
         {/* for Gym client web*/}
-        <div className="w-full flex flex-col lg:flex-row-reverse container mx-auto px-2 py-5">
+        <div className="w-full flex flex-col lg:flex-row container mx-auto px-2 py-5">
           {/* for image */}
           <div className="flex flex-1 p-2 items-center justify-center">
             <img
@@ -98,6 +53,52 @@ const WebAppDevelopment = () => {
             <div className=" border-2 rounded-full w-10 p-2 border-[var(--secondbackground)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
               <a
                 href="https://github.com/GymManagmentSystem/gym_client_web_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-left"
+              >
+                <img src={GitIcon} className="w-full h-full" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* for Game Hub */}
+        <div className="w-full flex flex-col lg:flex-row-reverse container mx-auto px-2 py-5">
+          {/* for image */}
+          <div className="flex flex-1 p-2 items-center justify-center">
+            <img
+              src={GameWebImage}
+              className="w-[80%] h-[80%] md:w-[60%]  lg:rounded-2xl rounded-lg"
+            />
+          </div>
+          <div className="flex-1 p-4 ">
+            {/* for project name */}
+            <p className="text-[var(--primary)] font-semibold  text-2xl">
+              Gaming Website
+            </p>
+            {/* for project description */}
+            <p className="text-[var(--secondary)] lg:text-lg text-md lg:mt-2 mt-3 font-light text-justify">
+              I developed a dynamic Game Hub website using React, Vite, and
+              TypeScript, incorporating tools like React Query, Zustand, and
+              Chakra UI for enhanced functionality and design.
+            </p>
+            {/*for Technologies */}
+            <div className="grid grid-cols-2 md:flex md:flex-row  gap-3 mt-2">
+              <p className="inline-flex justify-center items-center text-[var(--primary)]  text-md font-semibold border-2 rounded-lg p-2 lg:px-4 py-1 w-auto">
+                React.js
+              </p>
+              <p className="inline-flex justify-center items-center text-[var(--primary)]  text-md font-semibold border-2 rounded-lg p-2 lg:px-4 py-1 w-auto">
+                TypeScript
+              </p>
+            </div>
+            {/* divider */}
+            <hr className="border-2 border-[var(--secondbackground)] mt-5 mb-2" />
+
+            {/* for github link */}
+            <div className=" border-2 rounded-full w-10 p-2 border-[var(--secondbackground)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
+              <a
+                href="https://github.com/ShashiniAluthge/game-hub"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex justify-left"
