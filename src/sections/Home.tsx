@@ -69,9 +69,7 @@ const Home: React.FC = () => {
           </h1>
           <h2 className="text-[var(--secondary)] font-bold text-xl md:text-2xl lg:text-3xl">
             And I'm a{" "}
-            <span className="text-[var(--primary)]">
-              {displayText}
-            </span>
+            <span className="text-[var(--primary)]">{displayText}</span>
             <span className="text-[var(--primary)] cursor">|</span>
           </h2>
           <div className="mt-6  lg:mt-10 flex flex-col md:flex-row ">
