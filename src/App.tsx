@@ -1,6 +1,7 @@
 import About from "./sections/About";
 import Home from "./sections/Home";
 import Projects from "./sections/Projects";
+import TechStack from "./sections/TechStack";
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Home />
       <About />
       <Projects/>
+      <TechStack/>
     </div>
   );
 };
