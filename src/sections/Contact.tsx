@@ -1,3 +1,6 @@
+import ContactForm from "../components/ContactForm";
+
+
 const Contact = () => {
   return (
     <div className="pb-12">
@@ -70,43 +73,7 @@ const Contact = () => {
           <h1 className="text-center text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20">
             Contact<span className="text-[var(--primary)]"> Me!</span>
           </h1>
-          <form className="mt-6 space-y-4 ">
-            <div className="flex gap-2 flex-col md:flex-row space-y-2 md:space-y-0">
-              <input
-                type="text"
-                placeholder="First Name"
-                className="input-field w-full md:w-1/2 bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)]"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className="input-field w-full md:w-1/2 bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)]"
-              />
-            </div>
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)] "
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)]"
-            />
-            <input
-              type="text"
-              placeholder="Subject"
-              className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)]"
-            />
-
-            <textarea
-              placeholder="Your Message"
-              className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)] h-30"
-            ></textarea>
-            <button className="px-8 py-2 lg:px-5 text-[var(--primary)] rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
-              Send Message
-            </button>
-          </form>
+          <ContactForm/>
         </div>
       </div>
     </div>
