@@ -21,6 +21,57 @@ const ContactForm = () => {
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
 
+//validation function
+  const validate = (name: string, value: string) => {
+    let error = "";
+
+    if (value.trim() === "") {
+      if (name === "firstname") error = "First name is required";
+      if (name === "lastname") error = "Last name is required";
+      if (name === "email") error = "Email is required";
+      if (name === "phonenumber") error = "Phone number is required";
+      if (name === "subject") error = "Subject is required";
+      if (name === "message") error = "Message is required";
+    } else {
+      if (name === "firstname" && !/^[A-Za-z]+$/.test(value.trim())) {
+        error = "First name must contain only letters";
+      }
+
+      if (name === "lastname" && !/^[A-Za-z]+$/.test(value.trim())) {
+        error = "Last name must contain only letters";
+      }
+
+      if (name === "email" && !/\S+@\S+\.\S+/.test(value)) {
+        error = "Valid email is required";
+      }
+
+      if (name === "phonenumber" && !/^\+94\d{9}$/.test(value)) {
+        error = "Phone number must start with +94 and have 9 digits after it";
+      }
+    }
+
+    return error;
+  };
+
+  const validateField = (name: string, value: string) => {
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: validate(name, value),
+    }));
+  };
+
+  const validateForm = () => {
+    const newErrors: Partial<FormData> = {};
+
+    Object.entries(formData).forEach(([key, value]) => {
+      const error = validate(key, value);
+      if (error) newErrors[key as keyof FormData] = error;
+    });
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -32,81 +83,6 @@ const ContactForm = () => {
     });
 
     validateField(name, value);
-  };
-
-  const validateField = (name: string, value: string) => {
-    setErrors((prevErrors) => {
-      const newErrors = { ...prevErrors };
-
-      if (name === "firstname") {
-        if (value.trim() === "") {
-          newErrors.firstname = "First name is required";
-        } else if (!/^[A-Za-z]+$/.test(value.trim())) {
-          newErrors.firstname = "First name must contain only letters";
-        } else {
-          delete newErrors.firstname;
-        }
-      }
-
-      if (name === "lastname") {
-        if (value.trim() === "") {
-          newErrors.lastname = "Last name is required";
-        } else if (!/^[A-Za-z]+$/.test(value.trim())) {
-          newErrors.lastname = "Last name must contain only letters";
-        } else {
-          delete newErrors.lastname;
-        }
-      }
-
-      if (name === "email") {
-        if (value.trim() === "") {
-          newErrors.email = "Email is required";
-        } else if (!/\S+@\S+\.\S+/.test(value)) {
-          newErrors.email = "Valid email is required";
-        } else {
-          delete newErrors.email;
-        }
-      }
-
-      if (name === "phonenumber") {
-        if (value.trim() === "") {
-          newErrors.phonenumber = "Phone number is required";
-        } else if (!/^\+94\d{9}$/.test(value)) {
-          newErrors.phonenumber =
-            "Phone number must start with +94 and have 9 digits after it";
-        } else {
-          delete newErrors.phonenumber;
-        }
-      }
-
-      if (name === "subject") {
-        if (value.trim() === "") {
-          newErrors.subject = "Subject is required";
-        } else {
-          delete newErrors.subject;
-        }
-      }
-
-      if (name === "message") {
-        if (value.trim() === "") {
-          newErrors.message = "Message is required";
-        } else {
-          delete newErrors.message;
-        }
-      }
-
-      return newErrors;
-    });
-  };
-
-  const validateForm = () => {
-    const newErrors: Partial<FormData> = {};
-
-    Object.entries(formData).forEach(([key, value]) => {
-      validateField(key, value);
-    });
-
-    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
