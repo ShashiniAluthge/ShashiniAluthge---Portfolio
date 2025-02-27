@@ -1,10 +1,11 @@
 import ContactForm from "../components/ContactForm";
+import HorizontalLine from "../components/HorizontalLine";
 
 
 const Contact = () => {
   return (
-    <div className="pb-12">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.5fr] gap-10 items-center mt-10 lg:mt-20  sm:p-6 md:p-10 lg:p-0 ">
+    <section className="lg:ml-30 lg:mr-30 pt-12 lg:pt-10 md:ml-10 md:mr-10 ml-2 mr-2 pb-12">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.5fr] gap-10 items-center ">
         {/* left Section */}
         <div className="">
           <h2 className="text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20 text-center md:text-left">
@@ -76,7 +77,9 @@ const Contact = () => {
           <ContactForm/>
         </div>
       </div>
-    </div>
+      <HorizontalLine/>
+    </section>
+    
   );
 };
 
