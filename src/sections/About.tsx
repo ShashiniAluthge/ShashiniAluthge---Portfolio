@@ -27,7 +27,7 @@ const About = () => {
         </h1>
         <div className="flex flex-col md:flex-row md:space-x-10">
           {/* University of Moratuwa */}
-          <div className="flex flex-col flex-1 bg-[var(--secondbackground)] gradient-border p-6 pt-4 mb-5 md:mb-0 transition-all duration-300 hover:button_shadow-hover button_shadow hover:scale-105">
+          <div className="flex flex-col flex-1 bg-[var(--secondbackground)] border p-6 pt-4 mb-5 md:mb-0 transition-all duration-300 cursor-pointer hover:shadow-xl rounded-2xl border-[var(--primary)] shadow-lg hover:scale-105">
             <span className="text-xl font-bold text-left text-[var(--primary)] mb-5">
               2022 - 2026
             </span>
@@ -43,7 +43,7 @@ const About = () => {
           </div>
 
           {/* Dhammapala Girls’ School */}
-          <div className="flex flex-col flex-1 bg-[var(--secondbackground)] gradient-border p-6 pt-4 transition-all duration-300 hover:button_shadow-hover button_shadow hover:scale-105">
+          <div className="flex flex-col flex-1 bg-[var(--secondbackground)] border p-6 pt-4 transition-all duration-300 cursor-pointer hover:shadow-xl rounded-2xl border-[var(--primary)] shadow-md hover:scale-105">
             <span className="text-xl font-bold text-left text-[var(--primary)] mb-5">
               2011 - 2020
             </span>
