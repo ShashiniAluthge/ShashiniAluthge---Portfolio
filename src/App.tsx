@@ -8,10 +8,14 @@ const App = () => {
   return (
     <div className="bg-[var(--background)]">
       <Home />
+
       <About />
-      <Projects/>
-      <TechStack/>
-      <Contact/>
+
+      <Projects />
+
+      <TechStack />
+
+      <Contact />
     </div>
   );
 };

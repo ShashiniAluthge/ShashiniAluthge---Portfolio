@@ -1,10 +1,11 @@
 import ContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
 import HorizontalLine from "../components/HorizontalLine";
 
 
 const Contact = () => {
   return (
-    <section className="lg:ml-30 lg:mr-30 pt-12 lg:pt-10 md:ml-10 md:mr-10 ml-2 mr-2 pb-12">
+    <section className="lg:ml-30 lg:mr-30 pt-12 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2 pb-12 " id="contact">
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.5fr] gap-10 items-center ">
         {/* left Section */}
         <div className="">
@@ -78,6 +79,7 @@ const Contact = () => {
         </div>
       </div>
       <HorizontalLine/>
+      <Footer/>
     </section>
     
   );

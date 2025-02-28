@@ -1,82 +1,100 @@
 import { useState } from "react";
 import Drawer from "./Drawer";
 import MenuIcon from "../assets/menu.png";
+import { Link } from "react-scroll";
 
 const NavBar = () => {
-  const [active, setActive] = useState("home");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
     <div className="fixed top-0 left-0 right-0 lg:right-30 lg:left-30 md:left-10 md:right-10 bg-[var(--background)]">
       <nav className="flex justify-between items-center p-6">
-        <h1 className="text-2xl font-bold text-[var(--secondary)] tracking-wide uppercase">
-          <span className="text-[var(--primary)] italic font-serif text-3xl">
+        <h1 className="text-2xl font-bold text-[var(--secondary)]  uppercase tracking-wide">
+          <span className="text-[var(--primary)] italic  text-3xl ">
             S
           </span>
           hashini
         </h1>
 
-        <ul className="hidden lg:flex space-x-6">
-          <li
-            onClick={() => setActive("home")}
-            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
-              active === "home"
-                ? "text-[var(--primary)] font-bold"
-                : "text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold "
-            }`}
+        <div className="hidden lg:flex space-x-6">
+          <Link
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={1500}
+            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
+            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8 "
           >
-            <a href="#home">Home</a>
-          </li>
+            Home
+          </Link>
 
-          <li
-            onClick={() => setActive("about")}
-            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
-              active === "about"
-                ? "text-[var(--primary)] font-bold"
-                : "text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold "
-            }`}
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-75}
+            duration={1500}
+            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
+            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8"
           >
-            <a href="#about">About Me</a>
-          </li>
+            About Me
+          </Link>
 
-          <li
-            onClick={() => setActive("projects")}
-            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
-              active === "projects"
-                ? "text-[var(--primary)] font-bold"
-                : "text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold "
-            }`}
+          <Link
+            to="projects"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1500}
+            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
+            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8"
           >
-            <a href="#projects">Projects</a>
-          </li>
-          <li
-            onClick={() => setActive("techStack")}
-            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
-              active === "techStack"
-                ? "text-[var(--primary)] font-bold"
-                : "text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold "
-            }`}
-          >
-            <a href="#techStack">Teck Stack</a>
-          </li>
+            Projects
+          </Link>
 
-          <li
-            onClick={() => setActive("contact")}
-            className={`px-4 py-1 rounded-4xl cursor-pointer transition ${
-              active === "contact"
-                ? "text-[var(--primary)] font-bold"
-                : "text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold"
-            }`}
+          <Link
+            to="techstack"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1500}
+            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
+            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8"
           >
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-        <button className="hidden lg:block px-5 py-2 text-[var(--primary)] rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
+            Tech Stack
+          </Link>
+
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={1500}
+            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
+            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8"
+          >
+            Contact
+          </Link>
+        </div>
+        <button
+          className="hidden lg:block px-5 py-2 text-[var(--primary)] rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer"
+          onClick={() => {
+            const contactSection = document.getElementById("contact");
+            if (contactSection) {
+              window.scrollTo({
+                top: contactSection.offsetTop - 50,
+                behavior: "smooth",
+                
+              });
+            }
+          }}
+        >
           Connect me
         </button>
 
         <button
-          className="lg:hidden text-[var(--secondary)]"
+          className="lg:hidden text-[var(--secondary)] cursor"
           onClick={() => setIsDrawerOpen(true)}
         >
           <img src={MenuIcon} className="w-5 h-4" />
