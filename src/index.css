@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+*{
+  font-family: 'Poppins',sans-serif;
+}
 :root {
   --primary: #009dff;
   --secondary: #fff;
