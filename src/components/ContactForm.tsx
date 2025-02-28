@@ -92,6 +92,7 @@ const ContactForm = () => {
         )
         .then(() => {
           console.log("SUCCESS!");
+          alert('Email sent !');
           setFormData({
             firstname: "",
             lastname: "",
