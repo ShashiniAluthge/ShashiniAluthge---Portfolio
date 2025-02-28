@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Home from "./sections/Home";
@@ -16,6 +17,7 @@ const App = () => {
       <TechStack />
 
       <Contact />
+      <Footer/>
     </div>
   );
 };
