@@ -1,5 +1,4 @@
 import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
 import HorizontalLine from "../components/HorizontalLine";
 
 
@@ -79,7 +78,7 @@ const Contact = () => {
         </div>
       </div>
       <HorizontalLine/>
-      <Footer/>
+      
     </section>
     
   );
