@@ -14,7 +14,7 @@ const Contact = () => {
 
           <div className="mt-6 space-y-4 pl-10 md:pl-0">
             <div className="flex items-center space-x-4">
-              <div className="bg-[var(--secondbackground)] p-2 rounded-lg">
+              <div className="bg-[var(--secondbackground)] p-2 rounded-lg hover:shadow-2xl">
                 <svg className="w-6 h-6" fill="white" viewBox="0 0 24 24">
                   <path d="M6.6,3A3.6,3.6,0,0,0,3,6.6C3,14.5,9.5,21,17.4,21A3.6,3.6,0,0,0,21,17.4,1,1,0,0,0,20,16.5a6.4,6.4,0,0,1-2.7-.5,1,1,0,0,0-1.2.3L14.4,17a14.4,14.4,0,0,1-6-6L9.7,9.9a1,1,0,0,0,.3-1.2A6.4,6.4,0,0,1,9.5,6.5,1,1,0,0,0,8.5,6,3.6,3.6,0,0,0,6.6,3Z" />
                 </svg>
@@ -28,7 +28,7 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <div className="bg-[var(--secondbackground)] p-2 rounded-lg">
+              <div className="bg-[var(--secondbackground)] p-2 rounded-lg cursor-pointer hover:shadow-2xl" onClick={()=>window.open("mailto:ssshashini21@gmail.com","_blank")}>
                 <svg className="w-6 h-6" fill="white" viewBox="0 0 24 24">
                   <path
                     fillRule="evenodd"
@@ -49,7 +49,7 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <div className="bg-[var(--secondbackground)] p-2 rounded-lg">
+              <div className="bg-[var(--secondbackground)] p-2 rounded-lg cursor-pointer hover:shadow-2xl" onClick={()=>window.open("https://www.linkedin.com/in/shashini-sithara-64545b30b/","_blank")}>
                 <svg className="w-6 h-6" fill="white" viewBox="0 0 24 24">
                   <path d="M4.98 3C3.33 3 2 4.34 2 6s1.33 3 2.98 3S8 7.66 8 6 6.64 3 4.98 3zM3 8h4v12H3V8zm7-1h4v2.09c.73-1.39 2.5-2.09 4-2.09 3.36 0 4 2.21 4 5.09V20h-4v-7c0-1.39 0-3-2-3s-2 1.61-2 3v7h-4V7z"></path>
                 </svg>
@@ -62,7 +62,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:font-bold hover:text-[var(--secondary)]"
                 >
-                  linkedin.com/in/shashini-sithara
+                  Shashini_Aluthge
                 </a>
               </div>
             </div>
