@@ -79,7 +79,7 @@ const Modal=({project,onClose,}:{project:Project;onClose:()=>void})=>{
         </button>
 
         {/* Project Details */}
-        <div className="w-full flex flex-col lg:flex-row container mx-auto px-2 lg:mt-5 ">
+        <div className="w-full flex flex-col lg:flex-row container mx-auto px-2 lg:mt-5">
           {/* for image */}
           <div className="flex flex-1 p-2 items-center justify-center rounded-4xl  mx-2 ">
             <img
