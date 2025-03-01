@@ -48,7 +48,7 @@ const projectData: Project[] = [
 const Modal=({project,onClose,}: {project: Project;onClose: () => void;})=>{
   return(
 <div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50">
-      <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative max-h-screen w-[90%] lg:w-[60%] p-5 overflow-auto modalcard_shadow">
+      <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative max-h-screen w-[90%] lg:w-[60%] lg:p-5 overflow-auto h-[90%] md:h-auto modalcard_shadow">
         <button
           className="w-11 h-11 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
           onClick={onClose}
@@ -57,12 +57,12 @@ const Modal=({project,onClose,}: {project: Project;onClose: () => void;})=>{
         </button>
 
         {/* Project Details */}
-        <div className="w-full flex flex-row container mx-auto px-2 py-5 mt-5 h-auto">
+        <div className="w-full flex flex-col lg:flex-row container mx-auto px-2 lg:mt-5 ">
           {/* for image */}
-          <div className="flex flex-1 p-2 items-center justify-center">
+          <div className="flex flex-1 p-2 items-center justify-center rounded-4xl  mx-2 ">
             <img
               src={project.image}
-              className="w-400 h-[300px] lg:rounded-2xl rounded-lg"
+              className="lg:w-400 h-[200px] w-[250px] md:w-auto md:h-[300px] lg:rounded-2xl rounded-lg "
             />
           </div>
           <div className="flex-1 p-4 ">
