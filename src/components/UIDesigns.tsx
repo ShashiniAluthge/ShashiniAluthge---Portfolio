@@ -70,60 +70,63 @@ const Modal=({project,onClose,}:{project:Project;onClose:()=>void})=>{
 
   return(
     <div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50">
-      <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative max-h-screen w-[90%] lg:w-[60%] lg:p-5 overflow-auto h-[90%] md:h-auto modalcard_shadow">
-        <button
-          className="w-11 h-11 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
-          onClick={onClose}
-        >
-          <img src={closeIcon} />
-        </button>
+  <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative max-h-screen w-[80%] lg:w-[60%] pt-5 p-2 lg:p-5 overflow-auto h-[80%] md:h-auto modalcard_shadow">
+    
+    {/* Fixed Close Icon */}
+    <button
+      className="lg:fixed w-11 h-11 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
+      onClick={onClose}
+    >
+      <img src={closeIcon} />
+    </button>
 
-        {/* Project Details */}
-        <div className="w-full flex flex-col lg:flex-row container mx-auto px-2 lg:mt-5">
-          {/* for image */}
-          <div className="flex flex-1 p-2 items-center justify-center rounded-4xl  mx-2 ">
-            <img
-              src={project.image}
-              className="lg:rounded-2xl rounded-lg md:h-[300px]"
-            />
-          </div>
-          <div className="flex-1 p-4 ">
-            {/* Project Title */}
-            <p className="text-[var(--primary)] font-semibold text-2xl">
-              {project.title}
+    {/* Project Details */}
+    <div className="w-full flex flex-col lg:flex-row container mx-auto px-2 pb-3 lg:mt-5">
+      {/* for image */}
+      <div className="flex flex-1 p-2 items-center justify-center rounded-4xl mx-2">
+        <img
+          src={project.image}
+          className="lg:rounded-2xl rounded-lg md:h-[300px]"
+        />
+      </div>
+      <div className="flex-1">
+        {/* Project Title */}
+        <p className="text-[var(--primary)] font-semibold text-2xl">
+          {project.title}
+        </p>
+        {/* Project Description */}
+        <p className="text-[var(--secondary)] lg:text-lg text-md lg:mt-2 mt-3 font-light text-justify">
+          {project.description}
+        </p>
+        {/* Technologies */}
+        <div className="grid grid-cols-2 md:flex md:flex-row gap-3 mt-2">
+          {project.technologies.map((tech, index) => (
+            <p
+              key={index}
+              className="inline-flex justify-center items-center text-[var(--primary)] text-md font-semibold border-2 rounded-lg p-2 lg:px-4 py-1 w-auto"
+            >
+              {tech}
             </p>
-            {/* Project Description */}
-            <p className="text-[var(--secondary)] lg:text-lg text-md lg:mt-2 mt-3 font-light text-justify">
-              {project.description}
-            </p>
-            {/* Technologies */}
-            <div className="grid grid-cols-2 md:flex md:flex-row gap-3 mt-2">
-              {project.technologies.map((tech, index) => (
-                <p
-                  key={index}
-                  className="inline-flex justify-center items-center text-[var(--primary)] text-md font-semibold border-2 rounded-lg p-2 lg:px-4 py-1 w-auto"
-                >
-                  {tech}
-                </p>
-              ))}
-            </div>
-            <hr className="border-1 border-[var(--secondary)] mt-5 mb-2" />
+          ))}
+        </div>
+        <hr className="border-1 border-[var(--secondary)] mt-5 mb-2" />
 
-            {/* GitHub Link */}
-            <div className="border-2 rounded-full w-10 p-2 border-[var(--secondbackground)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex justify-left"
-              >
-                <img src={FigmaIcon} className="w-full h-full" />
-              </a>
-            </div>
-          </div>
+        {/* GitHub Link */}
+        <div className="border-2 rounded-full w-10 p-2 border-[var(--secondbackground)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-left"
+          >
+            <img src={FigmaIcon} className="w-full h-full" />
+          </a>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   )
 }
 
