@@ -48,9 +48,9 @@ const projectData: Project[] = [
 const Modal=({project,onClose,}: {project: Project;onClose: () => void;})=>{
   return(
 <div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50">
-      <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative max-h-screen w-[90%] lg:w-[60%] lg:p-5 overflow-auto h-[90%] md:h-auto modalcard_shadow">
+      <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative max-h-screen w-[80%] lg:w-[60%] lg:p-5 overflow-auto h-[90%] md:h-auto modalcard_shadow">
         <button
-          className="w-11 h-11 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
+          className="lg:fixed w-11 h-11 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
           onClick={onClose}
         >
           <img src={closeIcon} />
