@@ -39,3 +39,7 @@
       var(--secondary)
     );
 }
+
+.modalcard_shadow {
+  box-shadow: 0 3px 7px var(--gradient_2);
+}
