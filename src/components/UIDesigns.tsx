@@ -150,7 +150,7 @@ const [selectedProject,setSelectedProject] = useState<Project|null>(null);
         <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center ">
           {/* Project Cards */}
           {projectData.map((project, index) => (
-            <div key={index} className="w-full flex flex-col gap-5 container mx-auto px-2 py-5 bg-[var(--secondbackground)] rounded-xl shadow-xl shadow-[var(--primary)] h-auto max-w-[370px]  cursor-pointer hover:border-2 hover:border-[var(--primary)] transition-all ease-in-out duration-300 hover:shadow-xl hover:translate-y-[-5px]"
+            <div key={index} className="w-full flex flex-col gap-5 container mx-auto px-2 py-5 bg-[var(--footerbg)] rounded-xl shadow-xl shadow-[var(--primary)] h-auto max-w-[370px]  cursor-pointer hover:border-2 hover:border-[var(--primary)] transition-all ease-in-out duration-300 hover:shadow-xl hover:translate-y-[-5px]"
             onClick={()=>handleCardClick(project)}
             >
               {/* Image */}
