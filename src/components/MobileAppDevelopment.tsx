@@ -72,7 +72,7 @@ const Modal = ({project,onClose,}: {project: Project;onClose: () => void;}) => {
           {project.technologies.map((tech, index) => (
             <p
               key={index}
-              className="inline-flex justify-center items-center text-[var(--primary)] md:text-md text-sm font-semibold border-2 rounded-lg p-1 md:p-2 lg:px-4 py-1 w-auto "
+              className="inline-flex justify-center items-center text-[var(--primary)] md:text-md text-sm font-semibold border-2 rounded-lg p-1 md:p-2 lg:px-4 py-1 w-auto text-center"
             >
               {tech}
             </p>
