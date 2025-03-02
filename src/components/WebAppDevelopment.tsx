@@ -47,10 +47,10 @@ const projectData: Project[] = [
 
 const Modal=({project,onClose,}: {project: Project;onClose: () => void;})=>{
   return(
-<div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50">
-      <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative max-h-screen w-[80%] lg:w-[60%] lg:p-5 overflow-auto h-[90%] md:h-auto modalcard_shadow">
+<div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50 overflow-y-auto">
+      <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative w-[80%] lg:w-[60%] pt-5 p-2 md:p-5 modalcard_shadow mt-40 mb-10 lg:mt-0 lg:mb-0">
         <button
-          className="fixed w-11 h-11 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
+          className="md:w-11 md:h-11 w-9 h-9 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
           onClick={onClose}
         >
           <img src={closeIcon} />
@@ -59,15 +59,15 @@ const Modal=({project,onClose,}: {project: Project;onClose: () => void;})=>{
         {/* Project Details */}
         <div className="w-full flex flex-col lg:flex-row container mx-auto md:px-2 lg:mt-5 ">
           {/* for image */}
-          <div className="flex flex-1 p-2 items-center justify-center rounded-4xl  mx-2 ">
+          <div className="flex flex-1 p-2 items-center justify-center rounded-4xl  mx-2  pt-10">
             <img
               src={project.image}
-              className="lg:w-400 h-[200px] w-[250px] md:w-auto md:h-[300px] lg:rounded-2xl rounded-lg "
+              className="lg:rounded-2xl rounded-lg md:h-[300px]"
             />
           </div>
           <div className="flex-1 p-4 ">
             {/* Project Title */}
-            <p className="text-[var(--primary)] font-semibold text-xl md:text-2xl">
+            <p className="text-[var(--primary)] font-semibold text:xl md:text-2xl">
               {project.title}
             </p>
             {/* Project Description */}
@@ -79,7 +79,7 @@ const Modal=({project,onClose,}: {project: Project;onClose: () => void;})=>{
               {project.technologies.map((tech, index) => (
                 <p
                   key={index}
-                  className="inline-flex justify-center items-center text-[var(--primary)] text-md font-semibold border-2 rounded-lg p-2 lg:px-4 py-1 w-auto"
+                  className="inline-flex justify-center items-center text-[var(--primary)] text-sm md:text-md font-semibold border-2 rounded-lg p-1 md:p-2 lg:px-4 py-1 w-auto text-center"
                 >
                   {tech}
                 </p>
@@ -133,7 +133,7 @@ setSelectedProject(project);
             </div>
             <div className="p-4 flex flex-col flex-1">
               <div className="h-20 flex items-center">
-                <p className="text-[var(--primary)] font-semibold text-2xl text-left">
+                <p className="text-[var(--primary)] font-semibold text-xl md:text-2xl text-left">
                   {project.title}
                 </p>
               </div>
