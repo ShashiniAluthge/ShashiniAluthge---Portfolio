@@ -43,3 +43,6 @@
 .modalcard_shadow {
   box-shadow: 0 3px 7px var(--gradient_2);
 }
+.projectcard_shadow {
+  box-shadow: 0 3px 7px var(--secondbackground);
+}
