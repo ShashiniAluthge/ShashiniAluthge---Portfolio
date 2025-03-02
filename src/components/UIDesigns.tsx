@@ -69,12 +69,12 @@ const projectData:Project[]=[
 const Modal=({project,onClose,}:{project:Project;onClose:()=>void})=>{
 
   return(
-    <div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50">
-  <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative max-h-screen w-[80%] lg:w-[60%] pt-5 p-2 lg:p-5 overflow-auto h-[80%] md:h-auto modalcard_shadow">
+    <div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50 overflow-y-auto">
+  <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative w-[80%] lg:w-[60%] pt-5 p-2 md:p-5 modalcard_shadow mt-60 mb-10 lg:mt-0 lg:mb-0">
     
     {/* Fixed Close Icon */}
     <button
-      className="lg:fixed w-11 h-11 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
+      className=" md:w-11 md:h-11 w-9 h-9 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
       onClick={onClose}
     >
       <img src={closeIcon} />
@@ -83,7 +83,7 @@ const Modal=({project,onClose,}:{project:Project;onClose:()=>void})=>{
     {/* Project Details */}
     <div className="w-full flex flex-col lg:flex-row container mx-auto px-2 pb-3 lg:mt-5">
       {/* for image */}
-      <div className="flex flex-1 p-2 items-center justify-center rounded-4xl mx-2">
+      <div className="flex flex-1 p-2 items-center justify-center rounded-4xl mx-2 pt-10">
         <img
           src={project.image}
           className="lg:rounded-2xl rounded-lg md:h-[300px]"
@@ -91,11 +91,11 @@ const Modal=({project,onClose,}:{project:Project;onClose:()=>void})=>{
       </div>
       <div className="flex-1">
         {/* Project Title */}
-        <p className="text-[var(--primary)] font-semibold text-2xl">
+        <p className="text-[var(--primary)] font-semibold text:xl md:text-2xl">
           {project.title}
         </p>
         {/* Project Description */}
-        <p className="text-[var(--secondary)] lg:text-lg text-md lg:mt-2 mt-3 font-light text-justify">
+        <p className="text-[var(--secondary)] lg:text-lg md:text-md text-sm lg:mt-2 mt-3 font-light text-justify">
           {project.description}
         </p>
         {/* Technologies */}
@@ -103,7 +103,7 @@ const Modal=({project,onClose,}:{project:Project;onClose:()=>void})=>{
           {project.technologies.map((tech, index) => (
             <p
               key={index}
-              className="inline-flex justify-center items-center text-[var(--primary)] text-md font-semibold border-2 rounded-lg p-2 lg:px-4 py-1 w-auto"
+              className="inline-flex justify-center items-center text-[var(--primary)] text-md font-semibold border-2 rounded-lg p-1 md:p-2 lg:px-4 py-1 w-auto text-center"
             >
               {tech}
             </p>
@@ -150,20 +150,20 @@ const [selectedProject,setSelectedProject] = useState<Project|null>(null);
         <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center ">
           {/* Project Cards */}
           {projectData.map((project, index) => (
-            <div key={index} className="w-full flex flex-col gap-5 container mx-auto px-2 py-5 bg-[var(--footerbg)] rounded-xl shadow-xl shadow-[var(--primary)] h-auto max-w-[370px]  cursor-pointer hover:border-2 hover:border-[var(--primary)] transition-all ease-in-out duration-300 hover:shadow-xl hover:translate-y-[-5px]"
+            <div key={index} className="w-full flex flex-col gap-5 container mx-auto px-2 py-5 bg-[var(--footerbg)] rounded-xl shadow-xl shadow-[var(--primary)] h-auto max-w-[370px]  cursor-pointer hover:border-2 hover:border-[var(--primary)] transition-all ease-in-out duration-300 hover:shadow-xl hover:translate-y-[-5px] projectcard_shadow"
             onClick={()=>handleCardClick(project)}
             >
               {/* Image */}
               <div className="p-2 flex items-center justify-center">
                 <img
                   src={project.image}
-                  className="lg:rounded-2xl rounded-lg object-contain w-[350px] h-[220px] hover:scale-105"
+                  className="object-contain lg:rounded-2xl rounded-lg w-full h-[200px] hover:scale-105"
                 />
               </div>
               {/* Project Name */}
               <div className="p-4 flex flex-col flex-1">
                 <div className="h-20 flex items-center">
-                  <p className="text-[var(--primary)] font-semibold text-2xl text-left">
+                  <p className="text-[var(--primary)] font-semibold text-xl md:text-2xl text-left">
                     {project.title}
                   </p>
                 </div>
