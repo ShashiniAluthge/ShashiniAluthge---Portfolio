@@ -45,7 +45,7 @@ const Home: React.FC = () => {
             <div className="w-80 h-80 md:w-110 md:h-110 lg:w-150 lg:h-150  overflow-hidden items-center justify-center lg:mt-8">
               <img
                 src={profileBackImage}
-                className="w-full h-full object-contain  z-10"
+                className="w-full h-full object-contain  z-10 "
               />
             </div>
           </div>

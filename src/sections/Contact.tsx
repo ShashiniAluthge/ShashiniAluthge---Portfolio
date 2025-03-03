@@ -8,10 +8,10 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.5fr] gap-10 items-center ">
         {/* left Section */}
         <div className="">
-          <h2 className="text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20 text-center md:text-left">
-            Let's Work Together
+          <h2 className="text-[var(--primary)] font-semibold text-4xl md:text-5xl/20 text-center md:text-left">
+            Let's Talk
           </h2>
-
+          <p className="text-[var(--secondary)] text-center md:text-left mt-3">I'm open to new opportunities and exciting projects! Feel free to reach out — let's create something amazing together.</p>
           <div className="mt-6 space-y-4 pl-10 md:pl-0">
             <div className="flex items-center space-x-4">
               <div className="bg-[var(--secondbackground)] p-2 rounded-lg hover:shadow-2xl">
