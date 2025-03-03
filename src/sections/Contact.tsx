@@ -20,6 +20,7 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.5fr] gap-10 items-center ">
         {/* left Section */}
         <div className="">
+          <div className="overflow-hidden">
           <MotionText
             ref={textRef}
             className="text-[var(--primary)] font-semibold text-4xl md:text-5xl/20 text-center md:text-left"
@@ -31,6 +32,7 @@ const Contact = () => {
           >
             Let's Talk
           </MotionText>
+          </div>
           <p className="text-[var(--secondary)] text-center md:text-left mt-3">
             I'm open to new opportunities and exciting projects! Feel free to
             reach out — let's create something amazing together.
