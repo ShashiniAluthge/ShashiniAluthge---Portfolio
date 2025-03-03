@@ -1,17 +1,40 @@
 import ContactForm from "../components/ContactForm";
 import HorizontalLine from "../components/HorizontalLine";
+import { motion } from "framer-motion";
+import useAnimatedInView from "../hooks/useAnimatedInView";
+
+const MotionText = motion.h1;
 
 
 const Contact = () => {
+
+  const { ref: textRef, isInView: isTextInView } =
+    useAnimatedInView<HTMLHeadingElement>();
+
+   
   return (
-    <section className="lg:ml-30 lg:mr-30 pt-12 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2 pb-12 " id="contact">
+    <section
+      className="lg:ml-30 lg:mr-30 pt-12 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2 pb-12 "
+      id="contact"
+    >
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.5fr] gap-10 items-center ">
         {/* left Section */}
         <div className="">
-          <h2 className="text-[var(--primary)] font-semibold text-4xl md:text-5xl/20 text-center md:text-left">
+          <MotionText
+            ref={textRef}
+            className="text-[var(--primary)] font-semibold text-4xl md:text-5xl/20 text-center md:text-left"
+            initial={{ opacity: 0, x: -100 }}
+            animate={
+              isTextInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }
+            }
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
             Let's Talk
-          </h2>
-          <p className="text-[var(--secondary)] text-center md:text-left mt-3">I'm open to new opportunities and exciting projects! Feel free to reach out — let's create something amazing together.</p>
+          </MotionText>
+          <p className="text-[var(--secondary)] text-center md:text-left mt-3">
+            I'm open to new opportunities and exciting projects! Feel free to
+            reach out — let's create something amazing together.
+          </p>
           <div className="mt-6 space-y-4 pl-10 md:pl-0">
             <div className="flex items-center space-x-4">
               <div className="bg-[var(--secondbackground)] p-2 rounded-lg hover:shadow-2xl">
@@ -28,7 +51,12 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <div className="bg-[var(--secondbackground)] p-2 rounded-lg cursor-pointer hover:shadow-2xl" onClick={()=>window.open("mailto:ssshashini21@gmail.com","_blank")}>
+              <div
+                className="bg-[var(--secondbackground)] p-2 rounded-lg cursor-pointer hover:shadow-2xl"
+                onClick={() =>
+                  window.open("mailto:ssshashini21@gmail.com", "_blank")
+                }
+              >
                 <svg className="w-6 h-6" fill="white" viewBox="0 0 24 24">
                   <path
                     fillRule="evenodd"
@@ -49,7 +77,15 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <div className="bg-[var(--secondbackground)] p-2 rounded-lg cursor-pointer hover:shadow-2xl" onClick={()=>window.open("https://www.linkedin.com/in/shashini-sithara-64545b30b/","_blank")}>
+              <div
+                className="bg-[var(--secondbackground)] p-2 rounded-lg cursor-pointer hover:shadow-2xl"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/shashini-sithara-64545b30b/",
+                    "_blank"
+                  )
+                }
+              >
                 <svg className="w-6 h-6" fill="white" viewBox="0 0 24 24">
                   <path d="M4.98 3C3.33 3 2 4.34 2 6s1.33 3 2.98 3S8 7.66 8 6 6.64 3 4.98 3zM3 8h4v12H3V8zm7-1h4v2.09c.73-1.39 2.5-2.09 4-2.09 3.36 0 4 2.21 4 5.09V20h-4v-7c0-1.39 0-3-2-3s-2 1.61-2 3v7h-4V7z"></path>
                 </svg>
@@ -74,13 +110,11 @@ const Contact = () => {
           <h1 className="text-center text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20">
             Contact<span className="text-[var(--primary)]"> Me!</span>
           </h1>
-          <ContactForm/>
+          <ContactForm />
         </div>
       </div>
-      <HorizontalLine/>
-      
+      <HorizontalLine />
     </section>
-    
   );
 };
 

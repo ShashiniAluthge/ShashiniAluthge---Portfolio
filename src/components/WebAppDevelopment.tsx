@@ -4,7 +4,11 @@ import GitIcon from "../assets/github.png";
 import GymClientImage from "../assets/GymClient.png";
 import PortfolioImage from "../assets/Portfolio.png";
 import { useState } from "react";
-import closeIcon from '../assets/Close.png';
+import closeIcon from "../assets/Close.png";
+import useAnimatedInView from "../hooks/useAnimatedInView";
+import { motion } from "framer-motion";
+
+const MotionDiv = motion.div;
 
 interface Project {
   image: string;
@@ -45,9 +49,15 @@ const projectData: Project[] = [
   },
 ];
 
-const Modal=({project,onClose,}: {project: Project;onClose: () => void;})=>{
-  return(
-<div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50 overflow-y-auto">
+const Modal = ({
+  project,
+  onClose,
+}: {
+  project: Project;
+  onClose: () => void;
+}) => {
+  return (
+    <div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50 overflow-y-auto">
       <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative w-[80%] lg:w-[60%] pt-5 p-2 md:p-5 modalcard_shadow mt-40 mb-10 lg:mt-0 lg:mb-0">
         <button
           className="md:w-11 md:h-11 w-9 h-9 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
@@ -102,15 +112,18 @@ const Modal=({project,onClose,}: {project: Project;onClose: () => void;})=>{
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const WebDevelopment = () => {
-  const [selectedProject,setSelectedProject] = useState<Project|null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const handleCardClick =(project:Project)=>{
-setSelectedProject(project);
-  }
+  const handleCardClick = (project: Project) => {
+    setSelectedProject(project);
+  };
+
+  const { ref: divRef, isInView: isDivInView } =
+    useAnimatedInView<HTMLDivElement>();
 
   return (
     <div className="flex flex-col justify-center items-center ">
@@ -118,12 +131,18 @@ setSelectedProject(project);
         <img src={webIcon} className="w-8 h-8 md:w-10 md:h-10 mr-2 md:mr-10 " />
         Web Development
       </h1>
-      <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center">
+      <MotionDiv
+        ref={divRef}
+        className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center"
+        initial={{ opacity: 0, y: 100 }}
+        animate={isDivInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
         {projectData.map((project, index) => (
           <div
             key={index}
             className="w-full min-w-[280px] max-w-[370px] flex flex-col container h-auto max-w-[370px] mx-auto px-2 py-5 bg-[var(--footerbg)] rounded-xl shadow-xl shadow-[var(--primary)]  cursor-pointer hover:border-2 hover:border-[var(--primary)] transition-all ease-in-out duration-300 hover:shadow-xl hover:translate-y-[-5px] projectcard_shadow"
-            onClick={()=>handleCardClick(project)}
+            onClick={() => handleCardClick(project)}
           >
             <div className="flex p-2 items-center justify-center">
               <img
@@ -137,7 +156,7 @@ setSelectedProject(project);
                   {project.title}
                 </p>
               </div>
-              
+
               <hr className="border-1 border-[var(--secondary)] mt-5 mb-2" />
               <div className="border-2 rounded-full w-10 p-2 border-[var(--secondbackground)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
                 <a
@@ -152,9 +171,12 @@ setSelectedProject(project);
             </div>
           </div>
         ))}
-      </div>
+      </MotionDiv>
       {selectedProject && (
-        <Modal project={selectedProject} onClose={()=>setSelectedProject(null)}/>
+        <Modal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
       )}
     </div>
   );
