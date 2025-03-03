@@ -61,6 +61,7 @@ const TechStack = () => {
       className="lg:ml-30 lg:mr-30 pt-12 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2"
       id="techstack"
     >
+      <div className="overflow-hidden">
       <MotionText
         ref={textRef}
         className="text-center text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20 "
@@ -70,6 +71,7 @@ const TechStack = () => {
       >
         Tools &<span className="text-[var(--primary)]"> Technologies</span>
       </MotionText>
+      </div>
       <HorizontalLine />
       <TechGrid topic="Frontend Development" technologies={frontTechnologies} />
 

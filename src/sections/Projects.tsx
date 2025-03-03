@@ -16,6 +16,7 @@ const Projects = () => {
       className="lg:ml-30 lg:mr-30 pt-15 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2 "
       id="projects"
     >
+      <div className="overflow-hidden">
       <MotionText
         ref={textRef}
         className="text-center text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20"
@@ -26,7 +27,7 @@ const Projects = () => {
         My
         <span className="text-[var(--primary)]"> Projects</span>
       </MotionText>
-
+      </div>
       <HorizontalLine />
       <MobileAppDevelopment />
       <HorizontalLine />

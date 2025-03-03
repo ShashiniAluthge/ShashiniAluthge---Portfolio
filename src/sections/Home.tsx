@@ -60,7 +60,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex-1 flex-col justify-center items-center pt-8 md:pt-2 lg:pt-0 text-center lg:text-left">
+        <div className="flex-1 flex-col justify-center items-center pt-8 md:pt-2 lg:pt-0 text-center lg:text-left ">
+          <div className="overflow-hidden">
           <MotionDiv
             ref={divRef}
             initial={{ opacity: 0, x: -100 }}
@@ -76,6 +77,7 @@ const Home = () => {
               Shashini Aluthge
             </h1>
           </MotionDiv>
+          </div>
           <h2 className="text-[var(--secondary)] font-bold text-xl md:text-2xl lg:text-3xl">
             And I'm a{"  "}
             <span className="text-[var(--primary)]">

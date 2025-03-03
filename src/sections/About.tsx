@@ -12,6 +12,7 @@ const About = () => {
         className="lg:ml-30 lg:mr-30 pt-12 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2 "
         id="about"
       >
+        <div className="overflow-hidden">
         <MotionText
           ref={divRef}
           initial={{ opacity: 0, x: -100 }}
@@ -36,6 +37,7 @@ const About = () => {
             technologies and best practices in the field.
           </div>
         </MotionText>
+        </div>
         <div className="items-center justify-center px-2">
           <h1 className="text-center text-[var(--secondary)] md:text-4xl mt-8 text-3xl mb-5 font-bold">
             Education
