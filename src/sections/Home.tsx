@@ -52,31 +52,31 @@ const Home = () => {
 
       <div className="flex flex-col lg:flex-row-reverse items-center justify-center lg:h-[100vh] lg:ml-30 lg:mr-30 pt-12 md:ml-10 md:mr-10 ml-2 mr-2">
         <div className=" flex lg:flex-1">
-          <div className="w-80 h-80 md:w-110 md:h-110 lg:w-150 lg:h-150  overflow-hidden items-center justify-center lg:mt-8 ">
+          <div className="w-80 h-80 md:w-110 md:h-110 lg:w-150 lg:h-150 overflow-hidden items-center justify-center lg:mt-8">
             <img
               src={profileBackImage}
-              className="w-full h-full object-contain  z-10 transition-all duration-300 ease-out hover:scale-105 cursor-pointer " 
+              className="w-full h-full object-contain z-10 "
             />
           </div>
         </div>
 
         <div className="flex-1 flex-col justify-center items-center pt-8 md:pt-2 lg:pt-0 text-center lg:text-left ">
           <div className="overflow-hidden">
-          <MotionDiv
-            ref={divRef}
-            initial={{ opacity: 0, x: -100 }}
-            animate={
-              isDivInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }
-            }
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <h1 className="text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20">
-              Hello It's Me
-            </h1>
-            <h1 className="text-[var(--secondary)] font-bold text-4xl md:text-5xl/20">
-              Shashini Aluthge
-            </h1>
-          </MotionDiv>
+            <MotionDiv
+              ref={divRef}
+              initial={{ opacity: 0, x: -100 }}
+              animate={
+                isDivInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }
+              }
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              <h1 className="text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20">
+                Hello It's Me
+              </h1>
+              <h1 className="text-[var(--secondary)] font-bold text-4xl md:text-5xl/20">
+                Shashini Aluthge
+              </h1>
+            </MotionDiv>
           </div>
           <h2 className="text-[var(--secondary)] font-bold text-xl md:text-2xl lg:text-3xl">
             And I'm a{"  "}
