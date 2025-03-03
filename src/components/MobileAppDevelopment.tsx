@@ -4,6 +4,10 @@ import mobileIcon from "../assets/mobileIcon.png";
 import careAlertImage from "../assets/careAlert.png";
 import { useState } from "react";
 import closeIcon from "../assets/Close.png";
+import useAnimatedInView from "../hooks/useAnimatedInView";
+import { motion } from "framer-motion";
+
+const MotionDiv = motion.div;
 
 interface Project {
   image: string;
@@ -38,64 +42,69 @@ const projectData: Project[] = [
   },
 ];
 
-const Modal = ({project,onClose,}: {project: Project;onClose: () => void;}) => {
+const Modal = ({
+  project,
+  onClose,
+}: {
+  project: Project;
+  onClose: () => void;
+}) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-[var(--footerbg)] bg-opacity-50 flex justify-center items-center z-50 overflow-y-auto">
-  <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative  w-[80%] lg:w-[60%] pt-5 p-2 md:p-5 modalcard_shadow mt-60 mb-10 lg:mt-0 lg:mb-0">
-    <button
-      className=" md:w-11 md:h-11 w-9 h-9 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
-      onClick={onClose}
-    >
-      <img src={closeIcon} />
-    </button>
+      <div className="flex flex-col lg:flex-row bg-[var(--secondbackground)] rounded-2xl relative  w-[80%] lg:w-[60%] pt-5 p-2 md:p-5 modalcard_shadow mt-60 mb-10 lg:mt-0 lg:mb-0">
+        <button
+          className=" md:w-11 md:h-11 w-9 h-9 cursor-pointer absolute right-4 top-3 p-3 bg-[var(--secondbackground)] rounded-full shadow-xl hover:shadow-2xl transition-transform transform hover:scale-105 flex justify-center items-center hover:bg-[var(--primary)]"
+          onClick={onClose}
+        >
+          <img src={closeIcon} />
+        </button>
 
-    {/* Project Details */}
-    <div className="flex flex-col lg:flex-row container mx-auto px-2 mt-6 pb-3">
-      {/* for image */}
-      <div className="flex flex-1 p-2 items-center justify-center rounded-4xl mx-2">
-        <img
-          src={project.image}
-          className="lg:rounded-2xl rounded-lg md:h-[300px]"
-        />
-      </div>
-      <div className="flex-1">
-        {/* Project Title */}
-        <p className="text-[var(--primary)] font-semibold text:xl md:text-2xl">
-          {project.title}
-        </p>
-        {/* Project Description */}
-        <p className="text-[var(--secondary)] lg:text-lg md:text-md text-sm lg:mt-2 mt-3 font-light text-justify">
-          {project.description}
-        </p>
-        {/* Technologies */}
-        <div className="grid grid-cols-2 md:flex md:flex-row gap-3 mt-2">
-          {project.technologies.map((tech, index) => (
-            <p
-              key={index}
-              className="inline-flex justify-center items-center text-[var(--primary)] md:text-md text-sm font-semibold border-2 rounded-lg p-1 md:p-2 lg:px-4 py-1 w-auto text-center"
-            >
-              {tech}
+        {/* Project Details */}
+        <div className="flex flex-col lg:flex-row container mx-auto px-2 mt-6 pb-3">
+          {/* for image */}
+          <div className="flex flex-1 p-2 items-center justify-center rounded-4xl mx-2">
+            <img
+              src={project.image}
+              className="lg:rounded-2xl rounded-lg md:h-[300px]"
+            />
+          </div>
+          <div className="flex-1">
+            {/* Project Title */}
+            <p className="text-[var(--primary)] font-semibold text:xl md:text-2xl">
+              {project.title}
             </p>
-          ))}
-        </div>
-        <hr className="border-1 border-[var(--secondary)] mt-5 mb-2" />
+            {/* Project Description */}
+            <p className="text-[var(--secondary)] lg:text-lg md:text-md text-sm lg:mt-2 mt-3 font-light text-justify">
+              {project.description}
+            </p>
+            {/* Technologies */}
+            <div className="grid grid-cols-2 md:flex md:flex-row gap-3 mt-2">
+              {project.technologies.map((tech, index) => (
+                <p
+                  key={index}
+                  className="inline-flex justify-center items-center text-[var(--primary)] md:text-md text-sm font-semibold border-2 rounded-lg p-1 md:p-2 lg:px-4 py-1 w-auto text-center"
+                >
+                  {tech}
+                </p>
+              ))}
+            </div>
+            <hr className="border-1 border-[var(--secondary)] mt-5 mb-2" />
 
-        {/* GitHub Link */}
-        <div className="border-2 rounded-full w-10 p-2 border-[var(--secondbackground)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex justify-left"
-          >
-            <img src={GitIcon} className="w-full h-full" />
-          </a>
+            {/* GitHub Link */}
+            <div className="border-2 rounded-full w-10 p-2 border-[var(--secondbackground)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-left"
+              >
+                <img src={GitIcon} className="w-full h-full" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
   );
 };
 
@@ -106,8 +115,11 @@ const MobileAppDevelopment = () => {
     setSelectedProject(project);
   };
 
+  const { ref: divRef, isInView: isDivInView } =
+    useAnimatedInView<HTMLDivElement>();
+
   return (
-    <div className="flex flex-col justify-center items-center ">
+    <div className="flex flex-col justify-center items-center">
       <h1 className="text-center text-[var(--secondary)] md:text-3xl lg:text-3xl mt-8 text-2xl mb-5 font-bold flex justify-center">
         <img
           src={mobileIcon}
@@ -116,7 +128,13 @@ const MobileAppDevelopment = () => {
         Mobile App Development
       </h1>
 
-      <div className="grid grid-cols md:grid-cols-2 gap-10 justify-center items-center mt-10">
+      <MotionDiv
+        ref={divRef}
+        className="grid grid-cols md:grid-cols-2 gap-10 justify-center items-center mt-10"
+        initial={{ opacity: 0, y: 100 }}
+        animate={isDivInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
         {/* Project Cards */}
         {projectData.map((project, index) => (
           <div
@@ -154,7 +172,7 @@ const MobileAppDevelopment = () => {
             </div>
           </div>
         ))}
-      </div>
+      </MotionDiv>
       {selectedProject && (
         <Modal
           project={selectedProject}

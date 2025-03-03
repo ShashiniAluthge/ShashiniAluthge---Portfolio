@@ -16,6 +16,8 @@ import gitLogo from "../assets/git.png";
 import postmanLogo from "../assets/postman.png";
 import figmaLogo from "../assets/figma.png";
 import TechGrid from "../components/TechGrid";
+import { motion } from "framer-motion";
+import useAnimatedInView from "../hooks/useAnimatedInView";
 
 const frontTechnologies = [
   { name: "React.js", logo: ReactLogo },
@@ -48,13 +50,26 @@ const tools = [
   { name: "Postman", logo: postmanLogo },
   { name: "Figma", logo: figmaLogo },
 ];
+const MotionText = motion.h1;
 
 const TechStack = () => {
+  const { ref: textRef, isInView: isTextInView } =
+    useAnimatedInView<HTMLHeadingElement>();
+
   return (
-    <section className="lg:ml-30 lg:mr-30 pt-12 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2" id="techstack">
-      <h1 className="text-center text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20">
+    <section
+      className="lg:ml-30 lg:mr-30 pt-12 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2"
+      id="techstack"
+    >
+      <MotionText
+        ref={textRef}
+        className="text-center text-[var(--secondary)] font-semibold text-4xl md:text-5xl/20 "
+        initial={{ opacity: 0, x: 100 }}
+        animate={isTextInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
         Tools &<span className="text-[var(--primary)]"> Technologies</span>
-      </h1>
+      </MotionText>
       <HorizontalLine />
       <TechGrid topic="Frontend Development" technologies={frontTechnologies} />
 
@@ -65,7 +80,7 @@ const TechStack = () => {
       <TechGrid topic="Programming Languages" technologies={languages} />
 
       <TechGrid topic="Tools" technologies={tools} />
-      <HorizontalLine/>
+      <HorizontalLine />
     </section>
   );
 };
