@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import SuccessModal from "./SuccessModal";
+import ErrorModal from "./ErrorModal";
 
 interface ContactFormData {
   firstname: string;
@@ -23,6 +24,7 @@ const ContactForm = () => {
 
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
   const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false);
+  const [isErrorModalVisible, setIsErrorModalVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const form = useRef<HTMLFormElement | null>(null);
 
@@ -108,11 +110,16 @@ const ContactForm = () => {
 
           setTimeout(() => {
             setIsSuccessModalVisible(false);
-          }, 10000);
+          }, 5000);
         })
         .catch((error) => {
           console.log("FAILED...", error.text);
           setIsLoading(false);
+          setIsErrorModalVisible(true);
+
+          setTimeout(()=>{
+            setIsErrorModalVisible(false)
+          },5000)
         });
     }
   };
@@ -221,6 +228,10 @@ const ContactForm = () => {
 
       {isSuccessModalVisible && (
         <SuccessModal onclose={() => setIsSuccessModalVisible(false)} />
+      )}
+
+      {isErrorModalVisible &&(
+        <ErrorModal onclose={()=>setIsErrorModalVisible(false)}/>
       )}
     </div>
   );
