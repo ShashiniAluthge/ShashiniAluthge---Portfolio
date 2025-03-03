@@ -2,16 +2,15 @@ import logo from "../assets/footerLogo.png";
 
 const Footer = () => {
   return (
-    
-    <footer className="text-[var(--secondary)] font-light text-center  text-sm bg-[var(--footerbg)] h-auto pb-10 flex justify-center items-center flex-col">
-      <img src={logo} className="w-40 h-40"/>
+    <footer className="text-[var(--secondary)] font-light text-center text-sm bg-[var(--footerbg)] h-auto pb-10 flex justify-center items-center flex-col">
+      <img src={logo} className="w-40 h-40" />
       <div className="flex flex-row space-x-5 mb-8 -mt-8">
-        <div className="flex w-9 h-9  p-2 rounded-full  justify-center items-center  hover:ring-1 hover:ring-[var(--primary)]  ">
+        <div className="flex w-9 h-9 p-2 rounded-full justify-center items-center hover:ring-1 hover:ring-[var(--primary)]">
           <a
-            href="https://github.com/ShashiniAluthge"
+            href="https://www.facebook.com/shashini.aluthge.3"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--primary)]  transition duration-200"
+            className="text-[var(--primary)] transition duration-200"
           >
             <svg
               className="w-6 h-6"
@@ -21,18 +20,19 @@ const Footer = () => {
             >
               <path
                 fillRule="evenodd"
-                d="M12 2c-5.523 0-10 4.477-10 10 0 4.418 2.865 8.167 6.839 9.489.5.092.683-.217.683-.482v-1.695c-2.782.603-3.369-1.342-3.369-1.342-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.087 2.91.832.091-.646.349-1.087.636-1.338-2.221-.253-4.555-1.112-4.555-4.944 0-1.092.39-1.985 1.029-2.683-.103-.253-.446-1.272.097-2.65 0 0 .84-.269 2.75 1.025a9.564 9.564 0 0 1 2.5-.336c.847.003 1.702.114 2.5.336 1.91-1.294 2.75-1.025 2.75-1.025.543 1.378.2 2.397.097 2.65.64.698 1.029 1.591 1.029 2.683 0 3.842-2.337 4.688-4.564 4.936.358.308.678.915.678 1.846v2.735c0 .267.18.577.688.48C19.136 20.166 22 16.417 22 12c0-5.523-4.477-10-10-10z"
+                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.412c0-2.507 1.493-3.89 3.774-3.89 1.095 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.633.776-1.633 1.57v1.888h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"
                 clipRule="evenodd"
-              ></path>
+              />
             </svg>
           </a>
         </div>
-        <div className="flex w-9 h-9  p-2 rounded-full  justify-center items-center  hover:ring-1 hover:ring-[var(--primary)]  ">
+
+        <div className="flex w-9 h-9 p-2 rounded-full justify-center items-center hover:ring-1 hover:ring-[var(--primary)]">
           <a
             href="https://www.linkedin.com/in/shashini-sithara-64545b30b/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--primary)]  transition duration-200"
+            className="text-[var(--primary)] transition duration-200"
           >
             <svg
               className="w-5 h-5"
@@ -49,10 +49,10 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="flex w-9 h-9  p-2 rounded-full justify-center items-center  hover:ring-1 hover:ring-[var(--primary)] ">
+        <div className="flex w-9 h-9 p-2 rounded-full justify-center items-center hover:ring-1 hover:ring-[var(--primary)]">
           <a
             href="mailto:ssshashini21@gmail.com"
-            className="text-[var(--primary)]  transition duration-200"
+            className="text-[var(--primary)] transition duration-200"
           >
             <svg
               className="w-6 h-6"
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div>Coppyright &#169; 2025 Shashini Aluthge. All rights reserved.</div>
+      <div>Copyright &#169; 2025 Shashini Aluthge. All rights reserved.</div>
     </footer>
   );
 };
