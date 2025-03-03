@@ -94,7 +94,7 @@ const NavBar = () => {
         </button>
 
         <button
-          className="lg:hidden text-[var(--secondary)] cursor"
+          className="lg:hidden text-[var(--secondary)] cursor-pointer"
           onClick={() => setIsDrawerOpen(true)}
         >
           <img src={MenuIcon} className="w-5 h-4" />
