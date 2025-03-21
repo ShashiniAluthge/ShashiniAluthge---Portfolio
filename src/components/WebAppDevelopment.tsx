@@ -36,7 +36,7 @@ const projectData: Project[] = [
     description: `I developed a dynamic Game Hub website using React, Vite, and
               TypeScript, incorporating tools like React Query, Zustand, and
               Chakra UI for enhanced functionality and design.`,
-    technologies: ["React.js", "TypeScript"],
+    technologies: ["React.js", "TypeScript", "React Query", "Zustand"],
   },
   {
     image: PortfolioImage,
