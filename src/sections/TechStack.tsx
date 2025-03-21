@@ -15,6 +15,7 @@ import typescriptLogo from "../assets/TS.png";
 import gitLogo from "../assets/git.png";
 import postmanLogo from "../assets/postman.png";
 import figmaLogo from "../assets/figma.png";
+import ZustandLogo from '../assets/Zustand.png';
 import TechGrid from "../components/TechGrid";
 import { motion } from "framer-motion";
 import useAnimatedInView from "../hooks/useAnimatedInView";
@@ -27,6 +28,7 @@ const frontTechnologies = [
   { name: "Tailwind CSS", logo: TailwindLogo },
   { name: "Chakra UI", logo: ChakraLogo },
   { name: "React Query", logo: ReactQueryLogo },
+  { name: "Zustand", logo: ZustandLogo },
 ];
 
 const backTechnologies = [
