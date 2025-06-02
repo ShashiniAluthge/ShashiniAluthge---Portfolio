@@ -2,6 +2,7 @@ import GitIcon from "../assets/github.png";
 import Xpress from "../assets/Xpress.png";
 import mobileIcon from "../assets/mobileIcon.png";
 import careAlertImage from "../assets/careAlert.png";
+import Shopfinity from "../assets/Shopfinity.png";
 import { useState } from "react";
 import closeIcon from "../assets/Close.png";
 import useAnimatedInView from "../hooks/useAnimatedInView";
@@ -40,6 +41,18 @@ const projectData: Project[] = [
               and detail views, with a focus on front-end development.`,
     technologies: ["React Native", "JavaScript"],
   },
+  {
+    image: Shopfinity,
+    title: "Shopfinity - Mobile Shopping App",
+    link: "https://github.com/Shopfinity-team/shopfinity",
+    description: `
+              This system was developed to simplify and optimize the shopping experience for users.
+               Built as a Flutter mobile application, it connects seamlessly with a public API to enable key
+                functionalities such as placing orders, searching products, and browsing items by category. 
+              The application features a responsive and user-friendly interface,
+               ensuring smooth and efficient user interactions.`,
+    technologies: ["Flutter"],
+  },
 ];
 
 const Modal = ({
@@ -60,7 +73,7 @@ const Modal = ({
         </button>
 
         {/* Project Details */}
-        <div className="flex flex-col lg:flex-row container mx-auto px-2 mt-6 pb-3">
+        <div className="flex flex-col lg:flex-row container mx-auto px-2 mt-8 pb-3">
           {/* for image */}
           <div className="flex flex-1 p-2 items-center justify-center rounded-4xl mx-2">
             <img
@@ -130,7 +143,7 @@ const MobileAppDevelopment = () => {
 
       <MotionDiv
         ref={divRef}
-        className="grid grid-cols md:grid-cols-2 gap-10 justify-center items-center mt-10"
+        className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center items-center mt-10"
         initial={{ opacity: 0, y: 100 }}
         animate={isDivInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
         transition={{ duration: 1, ease: "easeOut" }}

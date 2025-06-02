@@ -19,7 +19,7 @@ const TechGrid = ({ topic, technologies }: TechgridProp) => {
           {technologies.map((tech, index) => (
             <div
               key={index}
-              className="bg-[var(--secondbackground)] flex flex-col items-center justify-center lg:w-40 lg:h-24 w-30 h-20 p-4 rounded-xl mx-auto border border-[var(--primary)] shadow-md hover:scale-105 hover:shadow-xl"
+              className="bg-[var(--secondbackground)] flex flex-col items-center justify-center lg:w-40 lg:h-24 w-30 h-20 p-4 rounded-xl  border border-[var(--primary)] shadow-md hover:scale-105 hover:shadow-xl"
             >
               <img src={tech.logo} alt={tech.name} className="w-10 h-10 mb-2" />
               <p className="text-[var(--secondary)] lg:text-lg text-sm text-center">
