@@ -1,6 +1,7 @@
 import HorizontalLine from "../components/HorizontalLine";
 import ReactLogo from "../assets/react.png";
 import ReactNativeLogo from "../assets/ReactNative.png";
+import FlutterLogo from "../assets/flutter.png";
 import HtmlLogo from "../assets/html.png";
 import CssLogo from "../assets/css3.png";
 import TailwindLogo from "../assets/tailwind.png";
@@ -23,6 +24,7 @@ import useAnimatedInView from "../hooks/useAnimatedInView";
 const frontTechnologies = [
   { name: "React.js", logo: ReactLogo },
   { name: "React Native", logo: ReactNativeLogo },
+  { name: "Flutter", logo: FlutterLogo },
   { name: "HTML", logo: HtmlLogo },
   { name: "CSS", logo: CssLogo },
   { name: "Tailwind CSS", logo: TailwindLogo },
