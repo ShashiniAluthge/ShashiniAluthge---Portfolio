@@ -83,7 +83,7 @@ const ContactForm = () => {
     if (form.current) {
       emailjs
         .send(
-          "service_6sx0s2a",
+          "service_zzrh15j",
           "template_08edp1m",
           {
             to_name: "Shashini",
@@ -92,7 +92,7 @@ const ContactForm = () => {
             subject: formData.subject,
             message: formData.message,
           },
-          "I1MAe3NyO6eBMcmob"
+          "8pblVUwqygD_I6YV_"
         )
         .then(() => {
           console.log("SUCCESS!");
@@ -117,9 +117,9 @@ const ContactForm = () => {
           setIsLoading(false);
           setIsErrorModalVisible(true);
 
-          setTimeout(()=>{
+          setTimeout(() => {
             setIsErrorModalVisible(false)
-          },5000)
+          }, 5000)
         });
     }
   };
@@ -230,8 +230,8 @@ const ContactForm = () => {
         <SuccessModal onclose={() => setIsSuccessModalVisible(false)} />
       )}
 
-      {isErrorModalVisible &&(
-        <ErrorModal onclose={()=>setIsErrorModalVisible(false)}/>
+      {isErrorModalVisible && (
+        <ErrorModal onclose={() => setIsErrorModalVisible(false)} />
       )}
     </div>
   );
