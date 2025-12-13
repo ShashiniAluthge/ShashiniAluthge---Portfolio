@@ -24,7 +24,7 @@ const SocialIcons = () => {
       </div>
       <div className="flex w-12 h-12 border-1 p-2 rounded-full  justify-center items-center border-[var(--primary)] hover:ring-1 hover:ring-[var(--primary)]  hover:shadow-[0_4px_4px_var(--primary)]">
         <a
-          href="https://www.linkedin.com/in/shashini-sithara-64545b30b/"
+          href="https://www.linkedin.com/in/shashini-aluthge-64545b30b/?trk=PROFILE_DROP_DOWN"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--secondary)] hover:text-[var(--primary)] transition duration-300"
@@ -45,24 +45,24 @@ const SocialIcons = () => {
       </div>
 
       <div className="flex w-12 h-12 border-1 p-2 rounded-full justify-center items-center border-[var(--primary)] hover:ring-1 hover:ring-[var(--primary)] hover:shadow-[0_4px_4px_var(--primary)]">
-  <a
-    href="mailto:ssshashini21@gmail.com"
-    className="text-[var(--secondary)] hover:text-[var(--primary)] transition duration-300"
-  >
-    <svg
-      className="w-7 h-7"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        d="M2 6.5A2.5 2.5 0 014.5 4h15A2.5 2.5 0 0122 6.5v11a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 17.5v-11zm2.5-.5a.5.5 0 00-.5.5v.307l8 4.8 8-4.8V6.5a.5.5 0 00-.5-.5h-15zM21 8.693l-8.218 4.93a1 1 0 01-1.064 0L3 8.693V17.5a.5.5 0 00.5.5h15a.5.5 0 00.5-.5V8.693z"
-        clipRule="evenodd"
-      ></path>
-    </svg>
-  </a>
-</div>
+        <a
+          href="mailto:ssshashini21@gmail.com"
+          className="text-[var(--secondary)] hover:text-[var(--primary)] transition duration-300"
+        >
+          <svg
+            className="w-7 h-7"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M2 6.5A2.5 2.5 0 014.5 4h15A2.5 2.5 0 0122 6.5v11a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 17.5v-11zm2.5-.5a.5.5 0 00-.5.5v.307l8 4.8 8-4.8V6.5a.5.5 0 00-.5-.5h-15zM21 8.693l-8.218 4.93a1 1 0 01-1.064 0L3 8.693V17.5a.5.5 0 00.5.5h15a.5.5 0 00.5-.5V8.693z"
+              clipRule="evenodd"
+            ></path>
+          </svg>
+        </a>
+      </div>
 
     </div>
   );
