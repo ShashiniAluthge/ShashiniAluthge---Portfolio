@@ -11,7 +11,7 @@ const Contact = () => {
   const { ref: textRef, isInView: isTextInView } =
     useAnimatedInView<HTMLHeadingElement>();
 
-   
+
   return (
     <section
       className="lg:ml-30 lg:mr-30 pt-12 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2 pb-12 "
@@ -21,17 +21,17 @@ const Contact = () => {
         {/* left Section */}
         <div className="">
           <div className="overflow-hidden">
-          <MotionText
-            ref={textRef}
-            className="text-[var(--primary)] font-semibold text-4xl md:text-5xl/20 text-center md:text-left"
-            initial={{ opacity: 0, x: -100 }}
-            animate={
-              isTextInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }
-            }
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            Let's Talk
-          </MotionText>
+            <MotionText
+              ref={textRef}
+              className="text-[var(--primary)] font-semibold text-4xl md:text-5xl/20 text-center md:text-left"
+              initial={{ opacity: 0, x: -100 }}
+              animate={
+                isTextInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }
+              }
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              Let's Talk
+            </MotionText>
           </div>
           <p className="text-[var(--secondary)] text-center md:text-left mt-3">
             I'm open to new opportunities and exciting projects! Feel free to
@@ -83,7 +83,7 @@ const Contact = () => {
                 className="bg-[var(--secondbackground)] p-2 rounded-lg cursor-pointer hover:shadow-2xl"
                 onClick={() =>
                   window.open(
-                    "https://www.linkedin.com/in/shashini-sithara-64545b30b/",
+                    "https://www.linkedin.com/in/shashini-aluthge-64545b30b/?trk=PROFILE_DROP_DOWN",
                     "_blank"
                   )
                 }
@@ -95,7 +95,7 @@ const Contact = () => {
               <div>
                 <p className="text-[var(--primary)] font-semibold">LinkedIn</p>
                 <a
-                  href="https://www.linkedin.com/in/shashini-sithara-64545b30b/"
+                  href="https://www.linkedin.com/in/shashini-aluthge-64545b30b/?trk=PROFILE_DROP_DOWN"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:font-bold hover:text-[var(--secondary)]"
