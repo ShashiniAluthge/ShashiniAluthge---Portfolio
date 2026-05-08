@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import SocialIcons from "../components/SocialIcons";
-import profileBackImage from "../assets/back.png";
+import profileBackImage from "../assets/profile.png";
 import { motion } from "framer-motion";
 import useAnimatedInView from "../hooks/useAnimatedInView";
 
 const MotionDiv = motion.div;
 
-const roles = ["Full Stack Developer", "Programmer", "UI/UX Designer"];
+const roles = ["Software Engineer", "Full Stack Developer", "Programmer", "UI/UX Designer"];
 
 const Home = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -88,9 +88,9 @@ const Home = () => {
           </h2>
           <div className="mt-6  lg:mt-10 flex flex-col md:flex-row ">
             <div className="text-center">
-              <button className="px-8 py-2 lg:px-5 text-[var(--primary)] rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
+              <button className="px-8 py-2 lg:px-5 text-[var(--primary)] text-xl font-medium rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
                 <a
-                  href="https://drive.google.com/file/d/1Yyjt60AzCpOqku4hCYm85D09fT_rsA29/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1fVGnWLFz54AU5Y4Y0QKt07jRt5D_Mie_/view?usp=sharing"
                   download="Shashini_Aluthge_CV.pdf"
                   target="_blank"
                 >
