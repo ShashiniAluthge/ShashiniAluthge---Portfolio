@@ -78,19 +78,19 @@ const NavBar = () => {
           </Link>
         </div>
         <button
-          className="hidden lg:block px-5 py-2 text-[var(--primary)] rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer"
+          className="hidden lg:block px-8 py-2 text-[var(--primary)] text-xl  rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer"
           onClick={() => {
             const contactSection = document.getElementById("contact");
             if (contactSection) {
               window.scrollTo({
                 top: contactSection.offsetTop - 50,
                 behavior: "smooth",
-                
+
               });
             }
           }}
         >
-          Connect me
+          Hire Me
         </button>
 
         <button
