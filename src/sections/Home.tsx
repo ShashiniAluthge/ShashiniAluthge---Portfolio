@@ -90,7 +90,7 @@ const Home = () => {
             <div className="text-center">
               <button className="px-8 py-2 lg:px-5 text-[var(--primary)] text-xl font-medium rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
                 <a
-                  href="https://drive.google.com/file/d/1fVGnWLFz54AU5Y4Y0QKt07jRt5D_Mie_/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1sWI-uljOtgDOvuuNg-_fsM6GjdBISOLa/view?usp=sharing"
                   download="Shashini_Aluthge_CV.pdf"
                   target="_blank"
                 >
