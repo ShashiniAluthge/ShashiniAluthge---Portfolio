@@ -88,15 +88,13 @@ const Home = () => {
           </h2>
           <div className="mt-6  lg:mt-10 flex flex-col md:flex-row ">
             <div className="text-center">
-              <button className="px-8 py-2 lg:px-5 text-[var(--primary)] text-xl font-medium rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer">
-                <a
-                  href="https://drive.google.com/file/d/145mP1yeMRL-Ffma1NBm1_idmcy2gZ68o/view?usp=sharing"
-                  download="Shashini_Aluthge_CV.pdf"
-                  target="_blank"
-                >
-                  Download CV
-                </a>
-              </button>
+              <a
+                href="https://drive.google.com/uc?export=download&id=1zCVd0Z1WWAX8wMu9T4tYENTxivyFapq6"
+                download="Shashini_Aluthge_CV.pdf"
+                className="inline-block px-8 py-2 lg:px-5 text-[var(--primary)] text-xl font-medium rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer"
+              >
+                Download CV
+              </a>
             </div>
 
             <SocialIcons />
