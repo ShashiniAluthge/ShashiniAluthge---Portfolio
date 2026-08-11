@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
-import HorizontalLine from "../components/HorizontalLine";
-import MobileAppDevelopment from "../components/MobileAppDevelopment";
-import UIDesigns from "../components/UIDesigns";
-import WebAppDevelopment from "../components/WebAppDevelopment";
 import useAnimatedInView from "../hooks/useAnimatedInView";
+import ProjectsGrid from "../components/ProjectsGrid";
 
 const MotionText = motion.h1;
 
@@ -13,7 +10,7 @@ const Projects = () => {
 
   return (
     <section
-      className="lg:ml-30 lg:mr-30 pt-15 lg:pt-20 md:ml-10 md:mr-10 ml-2 mr-2 "
+      className="section-container pt-12 lg:pt-20"
       id="projects"
     >
       <div className="overflow-hidden">
@@ -28,12 +25,10 @@ const Projects = () => {
           <span className="text-[var(--primary)]"> Projects</span>
         </MotionText>
       </div>
-      <HorizontalLine />
-      <WebAppDevelopment />
-      <HorizontalLine />
-      <MobileAppDevelopment />
-      <HorizontalLine />
-      <UIDesigns />
+
+      <div className="mt-10">
+        <ProjectsGrid />
+      </div>
     </section>
   );
 };

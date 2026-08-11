@@ -11,18 +11,36 @@ interface TechgridProp {
 const TechGrid = ({ topic, technologies }: TechgridProp) => {
   return (
     <div>
-      <h1 className="text-center text-[var(--secondary)] md:text-3xl lg:text-3xl mt-8 text-2xl mb-5 font-bold">
+      <h2
+        className="text-center text-[var(--secondary)] md:text-2xl lg:text-2xl text-xl mb-6 font-bold"
+        style={{ fontFamily: "'Syne', sans-serif" }}
+      >
         {topic}
-      </h1>
+      </h2>
       <div className="flex justify-center">
-        <div className="flex flex-wrap justify-center gap-4 md:gap-10 lg:gap-4 sm:px-8 md:px-20 lg:px-0 ">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-5">
           {technologies.map((tech, index) => (
             <div
               key={index}
-              className="bg-[var(--secondbackground)] flex flex-col items-center justify-center lg:w-40 lg:h-24 w-30 h-20 p-4 rounded-xl  border border-[var(--primary)] shadow-md hover:scale-105 hover:shadow-xl"
+              className="flex flex-col items-center justify-center lg:w-32 lg:h-28 w-24 h-24 p-4 rounded-2xl transition-transform duration-300 hover:-translate-y-1"
+              style={{
+                background: "linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015))",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "rgba(0,157,255,0.35)";
+                e.currentTarget.style.boxShadow = "0 12px 30px rgba(0,157,255,0.18)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
             >
-              <img src={tech.logo} alt={tech.name} className="w-10 h-10 mb-2" />
-              <p className="text-[var(--secondary)] lg:text-lg text-sm text-center">
+              <img src={tech.logo} alt={tech.name} className="w-9 h-9 mb-2 object-contain" />
+              <p
+                className="text-center text-xs md:text-sm"
+                style={{ color: "rgba(255,255,255,0.75)" }}
+              >
                 {tech.name}
               </p>
             </div>

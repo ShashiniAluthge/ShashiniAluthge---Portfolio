@@ -6,92 +6,92 @@ interface DrawerProps {
   onClose: () => void;
 }
 
+const navLinks = [
+  { to: "home", label: "Home", offset: -80 },
+  { to: "about", label: "About Me", offset: -75 },
+  { to: "projects", label: "Projects", offset: -71 },
+  { to: "techstack", label: "Tech Stack", offset: -68 },
+  { to: "contact", label: "Contact", offset: -78 },
+];
+
 const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
   return (
     <div
-      className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
-        isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-      }`}
+      className={`fixed inset-0 z-40 transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      style={{ background: "rgba(5,21,31,0.6)", backdropFilter: "blur(4px)" }}
       onClick={onClose}
     >
-      {/* Drawer Container */}
+      {/* Drawer panel */}
       <div
-        className={`fixed top-0 right-0 w-60 md:w-100 h-auto mb-20 bg-[var(--background)] text-[var(--secondary)] p-8 shadow-lg transition-transform duration-300 rounded-2xl border-2 mt-20 mr-10 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-20 right-4 md:right-6 w-[85vw] max-w-sm rounded-3xl overflow-hidden transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-[120%]"
+          }`}
+        style={{
+          background: "rgba(255,255,255,0.04)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          border: "1px solid rgba(0,157,255,0.15)",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
+        }}
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-[var(--secondary)] cursor-pointer"
+        {/* Header */}
+        <div
+          className="flex items-center justify-between px-6 py-5"
+          style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <img src={closeIcon} className="w-8 h-8" />
-        </button>
-
-        <div className="mt-10 space-y-8 md:space-y-10 flex flex-col ">
-          <Link
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={-80}
-            duration={1500}
-            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
-            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8 "
-            onClick={onClose}
+          <h2
+            className="text-lg font-bold uppercase tracking-widest select-none"
+            style={{ color: "var(--secondary)", fontFamily: "'Syne', sans-serif" }}
           >
-            Home
-          </Link>
-
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-75}
-            duration={1500}
-            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
-            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8"
+            <span style={{ color: "var(--primary)", fontSize: "1.2rem", fontStyle: "italic" }}>S</span>
+            hashini
+          </h2>
+          <button
             onClick={onClose}
+            className="w-9 h-9 rounded-full flex items-center justify-center transition-transform hover:scale-110"
+            style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}
           >
-            About Me
-          </Link>
+            <img src={closeIcon} className="w-3.5 h-3.5" />
+          </button>
+        </div>
 
-          <Link
-            to="projects"
-            spy={true}
-            smooth={true}
-            offset={-71}
-            duration={1500}
-            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
-            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8"
-            onClick={onClose}
-          >
-            Projects
-          </Link>
+        {/* Nav links */}
+        <div className="flex flex-col gap-1.5 p-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              spy={true}
+              smooth={true}
+              offset={link.offset}
+              duration={800}
+              activeClass="active-drawer-link"
+              className="drawer-link px-4 py-3 rounded-xl text-sm font-medium cursor-pointer transition-colors duration-200"
+              style={{ color: "rgba(255,255,255,0.65)" }}
+              onClick={onClose}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
 
-          <Link
-            to="techstack"
-            spy={true}
-            smooth={true}
-            offset={-68}
-            duration={1500}
-            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
-            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8"
-            onClick={onClose}
-          >
-            Tech Stack
-          </Link>
-
+        {/* Hire Me CTA */}
+        <div className="px-4 pb-5 pt-1">
           <Link
             to="contact"
             spy={true}
             smooth={true}
             offset={-78}
-            duration={1500}
-            activeClass="!text-[var(--primary)] !font-bold underline underline-offset-8"
-            className="px-4 py-1 rounded-4xl cursor-pointer transition text-[var(--secondary)] hover:text-[var(--primary)] hover:font-bold hover:underline hover:underline-offset-8"
+            duration={800}
+            className="block text-center px-6 py-3 rounded-full text-sm font-semibold text-white cursor-pointer transition-transform hover:scale-[1.02]"
+            style={{
+              background: "linear-gradient(135deg, var(--primary), var(--gradient_1))",
+              boxShadow: "0 4px 16px rgba(0,157,255,0.35)",
+            }}
             onClick={onClose}
           >
-            Contact
+            Hire Me
           </Link>
         </div>
       </div>
