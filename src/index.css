@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
-*{
-  font-family: 'Poppins',sans-serif;
+* {
+  font-family: 'Poppins', sans-serif;
 }
+
 :root {
   --primary: #009dff;
   --secondary: #fff;
@@ -10,9 +11,74 @@
   --secondbackground: #272d41;
   --gradient_1: #4fadff;
   --gradient_2: #87c7ff;
-  --footerbg:#06131C;
+  --footerbg: #06131C;
 }
 
+
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ── Shared section container padding ── */
+.section-container {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+/* ── Typing cursor blink ── */
+.cursor {
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── Glassmorphism card (used behind profile image) ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ── Glassmorphism badge / ghost button ── */
+.glass-badge {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 157, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Buttons ── */
 .button_shadow {
   box-shadow: 0 4px 7px var(--primary);
 }
@@ -21,29 +87,97 @@
   box-shadow: 0 6px 8px var(--primary);
 }
 
+/* ── Gradient border ── */
 .gradient-border {
-
   border: 2px solid transparent;
-  border-radius: 24px; /* Matches rounded-3xl */
+  border-radius: 24px;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: linear-gradient(
-      var(--secondbackground),
-      var(--secondbackground)
-    ),
-    linear-gradient(
-      to right,
-      var(--primary),
-      var(--gradient_1),
-      var(--gradient_2),
-      var(--secondary)
-    );
+  background-image:
+    linear-gradient(var(--secondbackground), var(--secondbackground)),
+    linear-gradient(to right, var(--primary), var(--gradient_1), var(--gradient_2), var(--secondary));
 }
 
 .modalcard_shadow {
   box-shadow: 0 3px 7px var(--gradient_2);
 }
+
 .projectcard_shadow {
   box-shadow: 0 3px 7px var(--secondbackground);
 }
 
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px #22c55e;
+  }
+
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 4px #22c55e;
+  }
+}
+
+/* ── Timeline node pulse (About / Education section) ── */
+@keyframes nodePulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(0, 157, 255, 0.15), 0 0 14px rgba(0, 157, 255, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px rgba(0, 157, 255, 0.08), 0 0 20px rgba(0, 157, 255, 0.9);
+  }
+}
+
+.typing-cursor {
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 300;
+  margin-left: 2px;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── Navbar link hover and active states ── */
+.nav-link {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+  background: rgba(0, 157, 255, 0.08);
+}
+
+.active-nav {
+  color: var(--primary) !important;
+  background: rgba(0, 157, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(0, 157, 255, 0.2);
+}
+
+/* ── Hide scrollbar but keep scroll functionality (used in project modal) ── */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, and other WebKit browsers */
+}
