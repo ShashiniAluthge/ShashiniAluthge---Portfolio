@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import SuccessModal from "./SuccessModal";
-import ErrorModal from "./ErrorModal";
+import { AnimatePresence } from "framer-motion";
+import StatusModal from "./StatusModal";
+
 
 interface ContactFormData {
   firstname: string;
@@ -11,6 +12,9 @@ interface ContactFormData {
   subject: string;
   message: string;
 }
+
+const inputClasses =
+  "w-full px-4 py-2.5 rounded-xl text-sm placeholder:text-white/40 text-[var(--secondary)] bg-white/5 border border-white/10 focus:border-[var(--primary)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/25 transition-colors";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -23,10 +27,9 @@ const ContactForm = () => {
   });
 
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
-  const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false);
-  const [isErrorModalVisible, setIsErrorModalVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const form = useRef<HTMLFormElement | null>(null);
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
 
   // Validation function
   const validate = (name: string, value: string) => {
@@ -106,20 +109,20 @@ const ContactForm = () => {
           });
           setErrors({});
           setIsLoading(false);
-          setIsSuccessModalVisible(true);
+          setStatus("success");
 
           setTimeout(() => {
-            setIsSuccessModalVisible(false);
+            setStatus(null);
           }, 5000);
         })
         .catch((error) => {
           console.log("FAILED...", error.text);
           setIsLoading(false);
-          setIsErrorModalVisible(true);
+          setStatus("error");
 
           setTimeout(() => {
-            setIsErrorModalVisible(false)
-          }, 5000)
+            setStatus(null);
+          }, 5000);
         });
     }
   };
@@ -127,7 +130,7 @@ const ContactForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="mt-6 space-y-4" ref={form}>
-        <div className="flex flex-col md:flex-row gap-2 md:gap-4">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-4">
           <div className="w-full md:w-1/2">
             <input
               type="text"
@@ -135,10 +138,10 @@ const ContactForm = () => {
               value={formData.firstname}
               onChange={handleInputChange}
               placeholder="First Name"
-              className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)]"
+              className={inputClasses}
             />
             {errors.firstname && (
-              <p className="text-red-500 text-sm">{errors.firstname}</p>
+              <p className="text-[#f87171] text-xs mt-1">{errors.firstname}</p>
             )}
           </div>
 
@@ -149,10 +152,10 @@ const ContactForm = () => {
               value={formData.lastname}
               onChange={handleInputChange}
               placeholder="Last Name"
-              className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)]"
+              className={inputClasses}
             />
             {errors.lastname && (
-              <p className="text-red-500 text-sm">{errors.lastname}</p>
+              <p className="text-[#f87171] text-xs mt-1">{errors.lastname}</p>
             )}
           </div>
         </div>
@@ -164,10 +167,10 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleInputChange}
             placeholder="Email Address"
-            className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)]"
+            className={inputClasses}
           />
           {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email}</p>
+            <p className="text-[#f87171] text-xs mt-1">{errors.email}</p>
           )}
         </div>
 
@@ -178,10 +181,10 @@ const ContactForm = () => {
             value={formData.phonenumber}
             onChange={handleInputChange}
             placeholder="Phone Number"
-            className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)] text-sm"
+            className={inputClasses}
           />
           {errors.phonenumber && (
-            <p className="text-red-500 text-sm">{errors.phonenumber}</p>
+            <p className="text-[#f87171] text-xs mt-1">{errors.phonenumber}</p>
           )}
         </div>
 
@@ -192,10 +195,10 @@ const ContactForm = () => {
             value={formData.subject}
             onChange={handleInputChange}
             placeholder="Subject"
-            className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)]"
+            className={inputClasses}
           />
           {errors.subject && (
-            <p className="text-red-500 text-sm">{errors.subject}</p>
+            <p className="text-[#f87171] text-xs mt-1">{errors.subject}</p>
           )}
         </div>
 
@@ -205,34 +208,39 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleInputChange}
             placeholder="Your Message"
-            className="input-field w-full bg-white text-[var(--secondbackground)] p-2 rounded-lg border border-[var(--primary)] focus:outline-[var(--primary)] h-30"
+            className={`${inputClasses} h-32 resize-none`}
           ></textarea>
           {errors.message && (
-            <p className="text-red-500 text-sm">{errors.message}</p>
+            <p className="text-[#f87171] text-xs mt-1">{errors.message}</p>
           )}
         </div>
 
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center gap-4 pt-2">
           <button
             type="submit"
-            className="px-8 py-2 lg:px-5 text-[var(--primary)] rounded-4xl transition-all duration-200 bg-[var(--background)] button_shadow hover:button_shadow-hover hover:scale-105 cursor-pointer"
+            className="px-8 py-3 font-semibold rounded-full text-sm text-white transition-transform hover:scale-105"
+            style={{
+              background: "linear-gradient(135deg, var(--primary), var(--gradient_1))",
+              boxShadow: "0 6px 24px rgba(0,157,255,0.3)",
+            }}
           >
             Submit
           </button>
 
           {isLoading && (
-            <div className="w-8 h-8 border-3 border-t-[var(--primary)] border-gray-300 rounded-full animate-spin pr-5"></div>
+            <div className="w-6 h-6 border-2 border-t-[var(--primary)] border-white/15 rounded-full animate-spin" />
           )}
         </div>
       </form>
 
-      {isSuccessModalVisible && (
-        <SuccessModal onclose={() => setIsSuccessModalVisible(false)} />
-      )}
-
-      {isErrorModalVisible && (
-        <ErrorModal onclose={() => setIsErrorModalVisible(false)} />
-      )}
+      <AnimatePresence>
+        {status && (
+          <StatusModal
+            variant={status}
+            onclose={() => setStatus(null)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

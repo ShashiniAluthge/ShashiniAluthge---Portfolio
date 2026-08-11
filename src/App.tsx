@@ -1,3 +1,4 @@
+import CustomCursor from "./components/CustomCursor";
 import Footer from "./components/Footer";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
@@ -8,6 +9,7 @@ import TechStack from "./sections/TechStack";
 const App = () => {
   return (
     <div className="bg-[var(--background)]">
+      <CustomCursor />
       <Home />
 
       <About />
@@ -17,7 +19,7 @@ const App = () => {
       <TechStack />
 
       <Contact />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
